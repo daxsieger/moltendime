@@ -1,0 +1,9 @@
+# Cursor Rules
+
+- Follow `AGENTS.md` and write every user prompt to `CHATS`.
+- Include ISO 8601 timestamp, handling agent, delegated agent, source client, and raw prompt text.
+- When delegating work to another agent or mode, log that task too.
+- If no hook or automation is available in the current Cursor environment, append the entry manually before finishing the task.
+- Follow `AGENTS.md` and create a git commit after each prompt that changes the workspace.
+- If the current Cursor environment cannot automate commits, run `./scripts/commit-prompt-state.ps1` manually before finishing the task.
+- Every new AI customization in this repo must also be implemented for Copilot and Claude Code and recorded in `SUPPORTED.md`.

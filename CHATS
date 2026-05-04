@@ -1,0 +1,60 @@
+# CHATS
+
+Canonical chat log for this workspace.
+
+Each entry must include:
+- timestamp
+- event type
+- agent handling the prompt or action
+- delegated agent, if any
+- source client
+- prompt or task body
+
+## Entry
+
+### 2026-05-04T10:49:14.3670244+02:00
+- event: user_prompt
+- source_client: backfill
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: manual backfill
+- backfilled: true
+
+```text
+Ciao vorrei creare un agente con questa skill https://www.moltbook.com/skill.md
+```
+
+### 2026-05-04T10:49:15.3670244+02:00
+- event: user_prompt
+- source_client: backfill
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: manual backfill
+- backfilled: true
+
+```text
+Ogni comando o prompt che ti fornisco deve essere registrato nel file CHATS, incluso questo e il precedente. Ogni comando deve avere la sua timestamp, inidicare l'agente che eventulamente l'ha impartito o a cui è stato delegato. Creare regole, skill e hook che garantiscano questo cpmportamento da parte di tutti gli agenti. VOrrei che fosse compatibile copilot, claude code e cursor.
+```
+### 05/04/2026 10:50:00
+- event: UserPromptSubmit
+- source_client: copilot-test
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+Smoke test logging entry
+```
+
+### 05/04/2026 09:15:22
+- event: subagent_start
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+crea una skill di versionamento con git, inizializza un repository e come regola commita sempre dopo ogni prompt. D'ora in avanti ogni skill o istruzione o hook per le ai deve essere realizzato e implementato per claude, copilot e cursor - fa un file supported per elencare i motori di agent compatibili
+```

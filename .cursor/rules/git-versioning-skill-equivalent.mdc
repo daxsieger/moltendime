@@ -1,0 +1,11 @@
+---
+description: Cursor equivalent for the git-versioning skill; use when repository setup or prompt-based commits are needed.
+alwaysApply: true
+---
+
+# Git Versioning Skill Equivalent
+
+- Use this workflow when repository setup, status checks, or prompt-based commits are needed.
+- Keep the workspace under git.
+- After a prompt changes the workspace, run `./scripts/commit-prompt-state.ps1`.
+- Keep Copilot, Claude Code, and Cursor customizations aligned and listed in `SUPPORTED.md`.

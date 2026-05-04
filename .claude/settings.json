@@ -1,0 +1,52 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "type": "command",
+        "windows": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\append-chat-log.ps1",
+        "timeout": 10,
+        "env": {
+          "CHAT_LOGGING_DEFAULT_AGENT": "Claude Code",
+          "CHAT_LOGGING_CLIENT": "claude-code",
+          "CHAT_LOGGING_CHATS_PATH": "CHATS",
+          "CHAT_LOGGING_COMMIT_AFTER_LOG": "true"
+        }
+      }
+    ],
+    "SubagentStart": [
+      {
+        "type": "command",
+        "windows": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\append-chat-log.ps1",
+        "timeout": 10,
+        "env": {
+          "CHAT_LOGGING_DEFAULT_AGENT": "Claude Code",
+          "CHAT_LOGGING_CLIENT": "claude-code",
+          "CHAT_LOGGING_CHATS_PATH": "CHATS"
+        }
+      }
+    ],
+    "SubagentStop": [
+      {
+        "type": "command",
+        "windows": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\append-chat-log.ps1",
+        "timeout": 10,
+        "env": {
+          "CHAT_LOGGING_DEFAULT_AGENT": "Claude Code",
+          "CHAT_LOGGING_CLIENT": "claude-code",
+          "CHAT_LOGGING_CHATS_PATH": "CHATS"
+        }
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "windows": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\commit-prompt-state.ps1",
+        "timeout": 15,
+        "env": {
+          "CHAT_COMMIT_DEFAULT_AGENT": "Claude Code",
+          "CHAT_COMMIT_CLIENT": "claude-code"
+        }
+      }
+    ]
+  }
+}

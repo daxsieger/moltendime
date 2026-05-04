@@ -1,0 +1,11 @@
+---
+description: Always log every user prompt and delegated agent task to CHATS with timestamp and agent attribution.
+alwaysApply: true
+---
+
+# Cursor Chat Logging Rule
+
+- Follow `AGENTS.md` and write every user prompt to `CHATS`.
+- Include ISO 8601 timestamp, handling agent, delegated agent, source client, and raw prompt text.
+- When delegating work to another agent or mode, log that task too.
+- Cursor project rules guide this behavior, but if no deterministic hook is available the acting agent must append manually.

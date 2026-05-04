@@ -1,0 +1,11 @@
+---
+description: Commit repository changes after every prompt and mirror AI customizations across Copilot, Claude Code, and Cursor.
+alwaysApply: true
+---
+
+# Cursor Versioning Rule
+
+- Keep this workspace under git.
+- After each prompt that changes the workspace, create a git commit.
+- If the current Cursor environment cannot automate the commit, run `./scripts/commit-prompt-state.ps1` manually.
+- Any new AI customization must also be implemented for Copilot and Claude Code and listed in `SUPPORTED.md`.

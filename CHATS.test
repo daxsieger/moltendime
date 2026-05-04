@@ -1,0 +1,12 @@
+
+### 2026-04-05T10:50:00.0000000+02:00
+- event: user_prompt
+- source_client: copilot-test
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+Validate ISO timestamp normalization
+```
