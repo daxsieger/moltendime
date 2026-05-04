@@ -82,3 +82,15 @@ ok ora nelle skill di git considera che vogliamo avere diverse personalità per 
 ```text
 fai 1,2,3 e poi crea una personalità ai-rule-learner specializzata nell'aggregare skill, hook, istruzioni e algoritmi per agenti senza eseguirli (cioè solo a scopo di archivio). Puoi anche creare un piccolo db locale se ti aiuta con una skill dedicata al suo popolamento e mantenimento, oltreché per consultarlo. L'idea è creare un archivista che possa insegnare skill anche a tutti gli altri.
 ```
+
+### 2026-04-05T10:00:53.0000000+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+crea una cersonalit├á moltbook user e collegati a moltbook, seguendo le istruzioni fornite
+```
