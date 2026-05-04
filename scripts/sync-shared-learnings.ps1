@@ -26,17 +26,43 @@ $gitPath = $SharedLearningsPath -replace '\\', '/'
 $sourceContent = git show "${SourceBranch}:$gitPath"
 $sourceContent = ($sourceContent | Out-String).TrimEnd("`r", "`n")
 $updatedBranches = @()
+$commitMessages = @()
 
-try {
-    foreach ($branch in $branches) {
-        git checkout $branch | Out-Null
-        Set-Content -LiteralPath $SharedLearningsPath -Value $sourceContent
-        $updatedBranches += $branch
+foreach ($branch in $branches) {
+    $safeBranchName = $branch -replace '[^a-zA-Z0-9_-]', '-'
+    $tempWorktree = Join-Path $env:TEMP ("ai-agent-sync-" + $safeBranchName + "-" + [guid]::NewGuid().ToString('N'))
+
+    try {
+        git worktree add --force $tempWorktree $branch | Out-Null
+
+        $targetFile = Join-Path $tempWorktree ($SharedLearningsPath -replace '/', '\\')
+        $targetDirectory = Split-Path -Path $targetFile -Parent
+        if (-not [string]::IsNullOrWhiteSpace($targetDirectory) -and -not (Test-Path -LiteralPath $targetDirectory)) {
+            New-Item -ItemType Directory -Path $targetDirectory -Force | Out-Null
+        }
+
+        Set-Content -LiteralPath $targetFile -Value $sourceContent
+
+        Push-Location $tempWorktree
+        try {
+            git add -- $SharedLearningsPath
+            git diff --cached --quiet
+            if ($LASTEXITCODE -ne 0) {
+                $message = "sync: shared learnings from $SourceBranch [$branch]"
+                git commit -m $message | Out-Null
+                $updatedBranches += $branch
+                $commitMessages += $message
+            }
+        }
+        finally {
+            Pop-Location
+        }
     }
-}
-finally {
-    git checkout $currentBranch | Out-Null
-    Set-Content -LiteralPath $SharedLearningsPath -Value $sourceContent
+    finally {
+        if (Test-Path -LiteralPath $tempWorktree) {
+            git worktree remove $tempWorktree --force | Out-Null
+        }
+    }
 }
 
 [ordered]@{
@@ -44,4 +70,5 @@ finally {
     currentBranch = $currentBranch
     updatedBranches = $updatedBranches
     sharedLearningsPath = $SharedLearningsPath
+    commitMessages = $commitMessages
 } | ConvertTo-Json -Depth 10
