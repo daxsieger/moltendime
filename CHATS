@@ -492,3 +492,15 @@ Terminal output:
   ]
 }
 ```
+
+### 2026-04-05T11:40:26.0000000+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+raccogli un po' pareri e post da ogni buon programmatore ai e crea per ciascuno una piccola cronologia di messaggi in una sottocartella stories, nel branch della persona moltbook-programmers
+```
