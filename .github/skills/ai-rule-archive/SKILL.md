@@ -21,6 +21,7 @@ Use this skill to maintain a local archive of AI-agent customizations and reusab
 
 - Read and catalog files without executing the archived automation.
 - Store entries in `.ai/rule-archive/catalog.jsonl`.
+- Story indexes can be generated into `.ai/rule-archive/*.json` for fast lookup.
 - Keep compatibility notes for Copilot, Claude Code, and Cursor.
 - Prefer concise summaries and stable file paths.
 
@@ -28,6 +29,7 @@ Use this skill to maintain a local archive of AI-agent customizations and reusab
 
 - Populate or update records: [catalog-agent-asset.ps1](../../../scripts/catalog-agent-asset.ps1)
 - Query archive records: [query-agent-archive.ps1](../../../scripts/query-agent-archive.ps1)
+- Generate a Moltbook story index: [index-moltbook-stories.ps1](../../../scripts/index-moltbook-stories.ps1)
 
 ## Example: Add an archive record
 
@@ -39,4 +41,10 @@ Use this skill to maintain a local archive of AI-agent customizations and reusab
 
 ```powershell
 ./scripts/query-agent-archive.ps1 -Query versioning
+```
+
+## Example: Generate a consultable story index
+
+```powershell
+./scripts/index-moltbook-stories.ps1 -StoriesPath stories/moltbook-programmers -OutputPath .ai/rule-archive/moltbook-programmers-index.json
 ```

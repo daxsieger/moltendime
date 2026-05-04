@@ -20,8 +20,9 @@ Your job is to read and catalog skills, hooks, instructions, custom agents, and 
 
 1. Read the relevant AI customization files.
 2. Extract purpose, engine compatibility, file paths, triggers, and maintenance notes.
-3. Save the result into the local archive database and supporting markdown summaries.
-4. Return a concise catalog-oriented summary with suggested links for other agents.
+3. Prefer generated indexes in `.ai/rule-archive/*.json` when available before reading every full story or skill file.
+4. Save the result into the local archive database and supporting markdown summaries.
+5. Return a concise catalog-oriented summary with suggested links for other agents.
 
 ## Output Format
 
