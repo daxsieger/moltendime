@@ -10,3 +10,4 @@ Use this skill for repository initialization, prompt-based commits, and cross-en
 4. Keep `.ai/SHARED_LEARNINGS.md` updated and present across personality branches.
 5. Keep Copilot, Claude Code, and Cursor customizations aligned.
 6. Update `SUPPORTED.md` when support coverage changes.
+7. Use `./scripts/sync-shared-learnings.ps1` when shared learnings need propagation.

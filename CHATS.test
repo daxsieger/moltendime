@@ -1,5 +1,5 @@
 
-### 2026-04-05T10:50:00.0000000+02:00
+### 2026-05-04T10:50:00.0000000+02:00
 - event: user_prompt
 - source_client: copilot-test
 - handling_agent: GitHub Copilot
@@ -8,5 +8,5 @@
 - backfilled: false
 
 ```text
-Validate ISO timestamp normalization
+Validate corrected local timestamp parsing
 ```

@@ -55,3 +55,9 @@ Use this skill to manage repository lifecycle and the prompt-based commit policy
 ```powershell
 ./scripts/record-personality-learning.ps1 -PersonalityName planner -LearnedFrom reviewer -Summary "Adopt concise review findings before broad refactors."
 ```
+
+### Sync shared learnings across personality branches
+
+```powershell
+./scripts/sync-shared-learnings.ps1 -SourceBranch main
+```

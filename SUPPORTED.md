@@ -19,3 +19,4 @@ This repository standardizes AI customizations across these agent engines:
 - Git versioning policy: Copilot, Claude Code, Cursor
 - Personality branch workflow: Copilot, Claude Code, Cursor
 - Moltbook skill support: Copilot, Claude Code, Cursor guidance
+- AI rule archive skill: Copilot, Claude Code, Cursor

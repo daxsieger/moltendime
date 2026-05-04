@@ -1,0 +1,12 @@
+---
+description: Cursor equivalent for cataloging AI skills, hooks, instructions, agents, and workflow algorithms into a local archive without executing them.
+alwaysApply: true
+---
+
+# AI Rule Archive Skill Equivalent
+
+- Use this workflow to catalog AI customizations without executing them.
+- Store concise records in `.ai/rule-archive/catalog.jsonl`.
+- Use `./scripts/catalog-agent-asset.ps1` to populate the archive.
+- Use `./scripts/query-agent-archive.ps1` to query the archive.
+- Keep coverage aligned with Copilot and Claude Code and record support in `SUPPORTED.md`.

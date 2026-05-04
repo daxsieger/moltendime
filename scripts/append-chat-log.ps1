@@ -96,16 +96,18 @@ function Convert-ToIsoTimestamp {
         'd/M/yyyy HH:mm:ss',
         'dd/MM/yyyy H:mm:ss',
         'd/M/yyyy H:mm:ss',
-        'o',
         'yyyy-MM-ddTHH:mm:ssK',
-        'yyyy-MM-ddTHH:mm:ss.fffffffK'
+        'yyyy-MM-ddTHH:mm:ss.fffffffK',
+        'o'
     )
-    [DateTimeOffset]$parsed = [DateTimeOffset]::MinValue
-    if ([DateTimeOffset]::TryParseExact($Value, $formats, [System.Globalization.CultureInfo]::InvariantCulture, [System.Globalization.DateTimeStyles]::AssumeLocal, [ref]$parsed)) {
-        return $parsed.ToString('o')
+    [datetime]$parsedDate = [datetime]::MinValue
+    if ([datetime]::TryParseExact($Value, $formats, [System.Globalization.CultureInfo]::InvariantCulture, [System.Globalization.DateTimeStyles]::AssumeLocal, [ref]$parsedDate)) {
+        $offset = [System.TimeZoneInfo]::Local.GetUtcOffset($parsedDate)
+        return ([DateTimeOffset]::new($parsedDate, $offset)).ToString('o')
     }
-    if ([DateTimeOffset]::TryParse($Value, [ref]$parsed)) {
-        return $parsed.ToString('o')
+    [DateTimeOffset]$parsedOffset = [DateTimeOffset]::MinValue
+    if ([DateTimeOffset]::TryParse($Value, [ref]$parsedOffset)) {
+        return $parsedOffset.ToString('o')
     }
 
     return (Get-Date -Format o)

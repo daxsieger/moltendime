@@ -35,8 +35,8 @@ Ciao vorrei creare un agente con questa skill https://www.moltbook.com/skill.md
 ```text
 Ogni comando o prompt che ti fornisco deve essere registrato nel file CHATS, incluso questo e il precedente. Ogni comando deve avere la sua timestamp, inidicare l'agente che eventulamente l'ha impartito o a cui è stato delegato. Creare regole, skill e hook che garantiscano questo cpmportamento da parte di tutti gli agenti. VOrrei che fosse compatibile copilot, claude code e cursor.
 ```
-### 05/04/2026 10:50:00
-- event: UserPromptSubmit
+### 2026-05-04T10:50:00.0000000+02:00
+- event: user_prompt
 - source_client: copilot-test
 - handling_agent: GitHub Copilot
 - delegated_to: none
@@ -47,7 +47,7 @@ Ogni comando o prompt che ti fornisco deve essere registrato nel file CHATS, inc
 Smoke test logging entry
 ```
 
-### 05/04/2026 09:15:22
+### 2026-05-04T09:15:22.0000000+02:00
 - event: subagent_start
 - source_client: copilot
 - handling_agent: GitHub Copilot
@@ -59,7 +59,7 @@ Smoke test logging entry
 crea una skill di versionamento con git, inizializza un repository e come regola commita sempre dopo ogni prompt. D'ora in avanti ogni skill o istruzione o hook per le ai deve essere realizzato e implementato per claude, copilot e cursor - fa un file supported per elencare i motori di agent compatibili
 ```
 
-### 2026-04-05T09:45:38.0000000+02:00
+### 2026-05-04T09:45:38.0000000+02:00
 - event: user_prompt
 - source_client: copilot
 - handling_agent: GitHub Copilot
@@ -68,10 +68,10 @@ crea una skill di versionamento con git, inizializza un repository e come regola
 - backfilled: false
 
 ```text
-ok ora nelle skill di git considera che vogliamo avere diverse personalit├á per l'agente e ad ognuno di esse va dato un branch differente. In tutti i branch per├▓ c'├¿ una storia di cosa ogni personalit├á ha appreso dalle altre.
+ok ora nelle skill di git considera che vogliamo avere diverse personalità per l'agente e ad ognuno di esse va dato un branch differente. In tutti i branch però c'è una storia di cosa ogni personalità ha appreso dalle altre.
 ```
 
-### 2026-04-05T09:50:56.0000000+02:00
+### 2026-05-04T09:50:56.0000000+02:00
 - event: user_prompt
 - source_client: copilot
 - handling_agent: GitHub Copilot
@@ -80,5 +80,5 @@ ok ora nelle skill di git considera che vogliamo avere diverse personalit├á p
 - backfilled: false
 
 ```text
-fai 1,2,3 e poi crea una personalit├á ai-rule-learner specializzata nell'aggregare skill, hook, istruzioni  e algoritmi per agenti senza eseguirli (cio├¿ solo a scopo di archivio). Puoi anche crere un piccolo db locale se ti aiuta con una skill deidicata al suo popolamento e mantenimento, oltreche per consultarlo. L'idea ├¿ crere un archivista che possa insegnare skill anche a tutti gli altri.
+fai 1,2,3 e poi crea una personalità ai-rule-learner specializzata nell'aggregare skill, hook, istruzioni e algoritmi per agenti senza eseguirli (cioè solo a scopo di archivio). Puoi anche creare un piccolo db locale se ti aiuta con una skill dedicata al suo popolamento e mantenimento, oltreché per consultarlo. L'idea è creare un archivista che possa insegnare skill anche a tutti gli altri.
 ```
