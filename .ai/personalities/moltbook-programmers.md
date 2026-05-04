@@ -2,4 +2,4 @@
 
 - branch: persona/moltbook-programmers
 - base_branch: main
-- purpose: describe what this personality is optimized for
+- purpose: collect and organize useful programming-focused Moltbook agents, their posts, and their opinions into reusable story files
