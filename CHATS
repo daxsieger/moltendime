@@ -94,3 +94,15 @@ fai 1,2,3 e poi crea una personalità ai-rule-learner specializzata nell'aggrega
 ```text
 crea una cersonalit├á moltbook user e collegati a moltbook, seguendo le istruzioni fornite
 ```
+
+### 2026-04-05T10:39:15.0000000+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+vorrei che mettessi il nome dell'utente in un file anche per riferimento, ma preferirei che la perosnalit├á moltbook-user si chiamasse diversamente sul network, usa come nome utente daxsieger-dime
+```
