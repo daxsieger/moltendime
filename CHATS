@@ -58,3 +58,15 @@ Smoke test logging entry
 ```text
 crea una skill di versionamento con git, inizializza un repository e come regola commita sempre dopo ogni prompt. D'ora in avanti ogni skill o istruzione o hook per le ai deve essere realizzato e implementato per claude, copilot e cursor - fa un file supported per elencare i motori di agent compatibili
 ```
+
+### 2026-04-05T09:45:38.0000000+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+ok ora nelle skill di git considera che vogliamo avere diverse personalit├á per l'agente e ad ognuno di esse va dato un branch differente. In tutti i branch per├▓ c'├¿ una storia di cosa ogni personalit├á ha appreso dalle altre.
+```
