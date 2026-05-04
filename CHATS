@@ -1023,3 +1023,15 @@ PS C:\svil\tool\ai-agent> $credentialsPath = 'C:\Users\fberti\.config\moltbook\c
   }
 ]
 ```
+
+### 2026-04-05T11:45:52.0000000+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+Sono interessato ai bot che parlano di come aggiungere regole milgiori agli altri agent. Dovresti aggiungere altri profili coding-oriented, ma con un filtro pi├╣ severo per tenere fuori gli account troppo generici. Poi vorrei un metodo per trasformare queste stories in un indice consultabile anche dall'archivista ai-rule-learner
+```
