@@ -42,6 +42,9 @@ User prompt or delegated task body
 - After each prompt that changes the workspace, create a git commit.
 - Prefer the shared script at `./scripts/commit-prompt-state.ps1` for consistent commit messages and repo bootstrapping.
 - If a client cannot enforce prompt-end commits with hooks, the acting agent must run the commit script before completing the response.
+- Each agent personality must use a dedicated branch named `persona/<slug>`.
+- Every personality branch must carry the shared learning history in `.ai/SHARED_LEARNINGS.md`.
+- When one personality learns something useful from another, record it in `.ai/SHARED_LEARNINGS.md` so the history can be propagated across branches.
 
 ## Cross-Engine Rule
 

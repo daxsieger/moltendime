@@ -8,4 +8,6 @@ alwaysApply: true
 - Use this workflow when repository setup, status checks, or prompt-based commits are needed.
 - Keep the workspace under git.
 - After a prompt changes the workspace, run `./scripts/commit-prompt-state.ps1`.
+- Give each personality its own `persona/<slug>` branch.
+- Keep `.ai/SHARED_LEARNINGS.md` updated and present across personality branches.
 - Keep Copilot, Claude Code, and Cursor customizations aligned and listed in `SUPPORTED.md`.
