@@ -8,6 +8,8 @@ alwaysApply: true
 - Keep this workspace under git.
 - After each prompt that changes the workspace, create a git commit.
 - If the current Cursor environment cannot automate the commit, run `./scripts/commit-prompt-state.ps1` manually.
+- Refresh `.ai/persona-knowledge/` before the commit so persona rule knowledge is stored in a merge-friendly textual form.
+- Refresh DB state manifests from `.ai/db-definitions.json` so derived indexes can detect total knowledge changes across one or more branches.
 - Any new AI customization must also be implemented for Copilot and Claude Code and listed in `SUPPORTED.md`.
 - Use one branch per agent personality, named `persona/<slug>`.
 - Keep `.ai/SHARED_LEARNINGS.md` synchronized across personality branches.

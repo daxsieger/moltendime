@@ -1,0 +1,240 @@
+{
+  "name": "ai-rule-archive",
+  "description": "Branch-aware knowledge state for the archivist catalog and its cross-persona sources.",
+  "branch_globs": [
+    "main",
+    "persona/*"
+  ],
+  "path_globs": [
+    ".ai/SHARED_LEARNINGS.md",
+    ".ai/persona-knowledge/*",
+    ".ai/persona-knowledge/*/*",
+    ".ai/persona-knowledge/*/*/*",
+    ".ai/persona-knowledge/*/*/*/*",
+    ".ai/rule-archive/catalog.jsonl",
+    ".ai/rule-archive/*.json",
+    ".github/agents/ai-rule-learner.agent.md",
+    ".github/skills/ai-rule-archive/*",
+    ".github/skills/ai-rule-archive/*/*",
+    "stories/moltbook-programmers/*"
+  ],
+  "total_knowledge_hash": "84d5d74aea3e2eeeddbcfa503f49bdb00ffea4ad495d0ad119e5c44020f395d8",
+  "branches": [
+    {
+      "branch": "main",
+      "knowledge_hash": "285f2889fea2ce218e1a5053c529833b7f3f25c248fcada0de6772c291ae52b9",
+      "file_count": 4,
+      "files": [
+        {
+          "path": ".ai/rule-archive/catalog.jsonl",
+          "sha256": "553df2f59ea5d0766b4b3f38ca2889d000a70c516b0a8d56d670498e8d9e1d0b"
+        },
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "a45566a28501d62e5bd7a8e7227c76e4d2ed41dfd8282f7f310689325fa80558"
+        },
+        {
+          "path": ".github/agents/ai-rule-learner.agent.md",
+          "sha256": "7b136f8e2808fadd8d3686da240de4e50f8476793db03e00dbd1b54c4628c325"
+        },
+        {
+          "path": ".github/skills/ai-rule-archive/SKILL.md",
+          "sha256": "b4793b8f17c205857ae874c4ab5506ac3744fe2b01f7eb9732c293a14b179482"
+        }
+      ]
+    },
+    {
+      "branch": "persona/ai-rule-learner",
+      "knowledge_hash": "285f2889fea2ce218e1a5053c529833b7f3f25c248fcada0de6772c291ae52b9",
+      "file_count": 4,
+      "files": [
+        {
+          "path": ".ai/rule-archive/catalog.jsonl",
+          "sha256": "553df2f59ea5d0766b4b3f38ca2889d000a70c516b0a8d56d670498e8d9e1d0b"
+        },
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "a45566a28501d62e5bd7a8e7227c76e4d2ed41dfd8282f7f310689325fa80558"
+        },
+        {
+          "path": ".github/agents/ai-rule-learner.agent.md",
+          "sha256": "7b136f8e2808fadd8d3686da240de4e50f8476793db03e00dbd1b54c4628c325"
+        },
+        {
+          "path": ".github/skills/ai-rule-archive/SKILL.md",
+          "sha256": "b4793b8f17c205857ae874c4ab5506ac3744fe2b01f7eb9732c293a14b179482"
+        }
+      ]
+    },
+    {
+      "branch": "persona/builder",
+      "knowledge_hash": "285f2889fea2ce218e1a5053c529833b7f3f25c248fcada0de6772c291ae52b9",
+      "file_count": 4,
+      "files": [
+        {
+          "path": ".ai/rule-archive/catalog.jsonl",
+          "sha256": "553df2f59ea5d0766b4b3f38ca2889d000a70c516b0a8d56d670498e8d9e1d0b"
+        },
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "a45566a28501d62e5bd7a8e7227c76e4d2ed41dfd8282f7f310689325fa80558"
+        },
+        {
+          "path": ".github/agents/ai-rule-learner.agent.md",
+          "sha256": "7b136f8e2808fadd8d3686da240de4e50f8476793db03e00dbd1b54c4628c325"
+        },
+        {
+          "path": ".github/skills/ai-rule-archive/SKILL.md",
+          "sha256": "b4793b8f17c205857ae874c4ab5506ac3744fe2b01f7eb9732c293a14b179482"
+        }
+      ]
+    },
+    {
+      "branch": "persona/moltbook-programmers",
+      "knowledge_hash": "bbbcf0bbb13210ae110f57baf100fbddbdf323f49e977a6969f32bdeef88cd7f",
+      "file_count": 15,
+      "files": [
+        {
+          "path": ".ai/persona-knowledge/moltbook-programmers/manifest.json",
+          "sha256": "e319b82fc8eb895452a01309cacc476b1b5c7659c41bf0b020372315f4054e9a"
+        },
+        {
+          "path": ".ai/persona-knowledge/moltbook-programmers/sources/.ai/personalities/moltbook-programmers.md",
+          "sha256": "1c9b2a16c204b7c1d441ac31ebdcc52686eff5188bef70dc38709f24691d2225"
+        },
+        {
+          "path": ".ai/rule-archive/catalog.jsonl",
+          "sha256": "51d34a5e7360e49f0dbbca8ea4c7370732b2e837119ec8b1a8dab4428fff0259"
+        },
+        {
+          "path": ".ai/rule-archive/db-state/ai-rule-archive.json",
+          "sha256": "501edcd9ea69cf8e40c1fe2bff1af2cb4e3ba92ab6100be2d70b56b4f727f4af"
+        },
+        {
+          "path": ".ai/rule-archive/moltbook-programmers-index.json",
+          "sha256": "517bc5b06f9fce92c6bcebd9709e9440c442df3ba02a97375f05e6019e608334"
+        },
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "0c6827cfc51d1e692fade2b56a0f9fc54f701f443db12ee153c1821691604bc5"
+        },
+        {
+          "path": ".github/agents/ai-rule-learner.agent.md",
+          "sha256": "aa7a52728a28e1d856d1eb00211001331e1ea144e9fe34ab2d9c16036017f438"
+        },
+        {
+          "path": ".github/skills/ai-rule-archive/SKILL.md",
+          "sha256": "1a4689038b4d4fb335ad922c70384b27af34a84ed1dd88159b54611a930991ad"
+        },
+        {
+          "path": "stories/moltbook-programmers/agensonhorrowitz.md",
+          "sha256": "3a7ebc78b56490191fe957b3c89b7fe79ba5ccc03e1d93925132be9adda777f1"
+        },
+        {
+          "path": "stories/moltbook-programmers/clawnexus.md",
+          "sha256": "dc0bc1296c2a17fa868f6af300f69d24768f7c958072ae1a1d6e9bf5a738d3f5"
+        },
+        {
+          "path": "stories/moltbook-programmers/coding-assistant.md",
+          "sha256": "fa59bd0b25a54e414358fc1762b45fcf304127c93cb173d4de08933cefce93fe"
+        },
+        {
+          "path": "stories/moltbook-programmers/INDEX.md",
+          "sha256": "4e3878ca4b8659049deb4fe00ebdc19af5c1e6ffbce45e2df0961129553107e3"
+        },
+        {
+          "path": "stories/moltbook-programmers/mb-developer.md",
+          "sha256": "d59aa572d9e330b2851efb727ee4a005cc5a91d3f71c94980fecb91d65f9f63f"
+        },
+        {
+          "path": "stories/moltbook-programmers/sola4x.md",
+          "sha256": "562f73c9394178992fe2b6c40f819ad5ba55935300776313965cda55c7167646"
+        },
+        {
+          "path": "stories/moltbook-programmers/vibecodingbot.md",
+          "sha256": "ec884c619410140bf7d570ed8d0c5e3c392e11a2893e5abde91d3e5fe986c19d"
+        }
+      ]
+    },
+    {
+      "branch": "persona/moltbook-user",
+      "knowledge_hash": "285f2889fea2ce218e1a5053c529833b7f3f25c248fcada0de6772c291ae52b9",
+      "file_count": 4,
+      "files": [
+        {
+          "path": ".ai/rule-archive/catalog.jsonl",
+          "sha256": "553df2f59ea5d0766b4b3f38ca2889d000a70c516b0a8d56d670498e8d9e1d0b"
+        },
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "a45566a28501d62e5bd7a8e7227c76e4d2ed41dfd8282f7f310689325fa80558"
+        },
+        {
+          "path": ".github/agents/ai-rule-learner.agent.md",
+          "sha256": "7b136f8e2808fadd8d3686da240de4e50f8476793db03e00dbd1b54c4628c325"
+        },
+        {
+          "path": ".github/skills/ai-rule-archive/SKILL.md",
+          "sha256": "b4793b8f17c205857ae874c4ab5506ac3744fe2b01f7eb9732c293a14b179482"
+        }
+      ]
+    },
+    {
+      "branch": "persona/planner",
+      "knowledge_hash": "affc031f81e75c2ee4c0a746a1981071ae609cf7a9aeb49bac89b2da56efdafb",
+      "file_count": 1,
+      "files": [
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "a45566a28501d62e5bd7a8e7227c76e4d2ed41dfd8282f7f310689325fa80558"
+        }
+      ]
+    },
+    {
+      "branch": "persona/researcher",
+      "knowledge_hash": "285f2889fea2ce218e1a5053c529833b7f3f25c248fcada0de6772c291ae52b9",
+      "file_count": 4,
+      "files": [
+        {
+          "path": ".ai/rule-archive/catalog.jsonl",
+          "sha256": "553df2f59ea5d0766b4b3f38ca2889d000a70c516b0a8d56d670498e8d9e1d0b"
+        },
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "a45566a28501d62e5bd7a8e7227c76e4d2ed41dfd8282f7f310689325fa80558"
+        },
+        {
+          "path": ".github/agents/ai-rule-learner.agent.md",
+          "sha256": "7b136f8e2808fadd8d3686da240de4e50f8476793db03e00dbd1b54c4628c325"
+        },
+        {
+          "path": ".github/skills/ai-rule-archive/SKILL.md",
+          "sha256": "b4793b8f17c205857ae874c4ab5506ac3744fe2b01f7eb9732c293a14b179482"
+        }
+      ]
+    },
+    {
+      "branch": "persona/reviewer",
+      "knowledge_hash": "285f2889fea2ce218e1a5053c529833b7f3f25c248fcada0de6772c291ae52b9",
+      "file_count": 4,
+      "files": [
+        {
+          "path": ".ai/rule-archive/catalog.jsonl",
+          "sha256": "553df2f59ea5d0766b4b3f38ca2889d000a70c516b0a8d56d670498e8d9e1d0b"
+        },
+        {
+          "path": ".ai/SHARED_LEARNINGS.md",
+          "sha256": "a45566a28501d62e5bd7a8e7227c76e4d2ed41dfd8282f7f310689325fa80558"
+        },
+        {
+          "path": ".github/agents/ai-rule-learner.agent.md",
+          "sha256": "7b136f8e2808fadd8d3686da240de4e50f8476793db03e00dbd1b54c4628c325"
+        },
+        {
+          "path": ".github/skills/ai-rule-archive/SKILL.md",
+          "sha256": "b4793b8f17c205857ae874c4ab5506ac3744fe2b01f7eb9732c293a14b179482"
+        }
+      ]
+    }
+  ]
+}

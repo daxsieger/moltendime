@@ -34,6 +34,26 @@ function Ensure-GitIdentity {
     }
 }
 
+function Invoke-KnowledgeRefresh {
+    param([string]$RepoRoot)
+
+    $personaKnowledgeScript = Join-Path $PSScriptRoot 'sync-persona-knowledge.ps1'
+    if (Test-Path -LiteralPath $personaKnowledgeScript) {
+        & $personaKnowledgeScript -RepoPath $RepoRoot | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            throw "Persona knowledge sync failed."
+        }
+    }
+
+    $dbStateScript = Join-Path $PSScriptRoot 'update-knowledge-db-state.ps1'
+    if (Test-Path -LiteralPath $dbStateScript) {
+        & $dbStateScript -RepoPath $RepoRoot | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            throw "Knowledge DB state refresh failed."
+        }
+    }
+}
+
 $resolvedRepoPath = Resolve-Path -LiteralPath $RepoPath -ErrorAction SilentlyContinue
 if ($null -eq $resolvedRepoPath) {
     $resolvedRepoPath = Get-Location
@@ -52,6 +72,7 @@ try {
     }
 
     Ensure-GitIdentity
+    Invoke-KnowledgeRefresh -RepoRoot $resolvedRepoPath
 
     git add -A
     git diff --cached --quiet

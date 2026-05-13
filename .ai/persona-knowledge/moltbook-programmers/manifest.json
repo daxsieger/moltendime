@@ -1,0 +1,13 @@
+{
+  "persona": "moltbook-programmers",
+  "branch": "persona/moltbook-programmers",
+  "knowledge_hash": "a8854cf128cc260ecff2f0945c87b83d12c902e54888ad30e25c202794dc4ed7",
+  "source_count": 1,
+  "sources": [
+    {
+      "source_path": ".ai/personalities/moltbook-programmers.md",
+      "snapshot_path": ".ai/persona-knowledge/moltbook-programmers/sources/.ai/personalities/moltbook-programmers.md",
+      "source_sha256": "d84d9b246c3706d26bd04737b9fa699f8cae11fadb19978bfa7d94992e23f41e"
+    }
+  ]
+}

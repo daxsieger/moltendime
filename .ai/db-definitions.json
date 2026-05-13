@@ -1,0 +1,26 @@
+{
+  "databases": [
+    {
+      "name": "ai-rule-archive",
+      "description": "Branch-aware knowledge state for the archivist catalog and its cross-persona sources.",
+      "branch_globs": [
+        "main",
+        "persona/*"
+      ],
+      "path_globs": [
+        ".ai/SHARED_LEARNINGS.md",
+        ".ai/persona-knowledge/*",
+        ".ai/persona-knowledge/*/*",
+        ".ai/persona-knowledge/*/*/*",
+        ".ai/persona-knowledge/*/*/*/*",
+        ".ai/rule-archive/catalog.jsonl",
+        ".ai/rule-archive/*.json",
+        ".github/agents/ai-rule-learner.agent.md",
+        ".github/skills/ai-rule-archive/*",
+        ".github/skills/ai-rule-archive/*/*",
+        "stories/moltbook-programmers/*"
+      ],
+      "output_path": ".ai/rule-archive/db-state/ai-rule-archive.json"
+    }
+  ]
+}

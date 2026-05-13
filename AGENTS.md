@@ -43,6 +43,8 @@ User prompt or delegated task body
 - Prefer the shared script at `./scripts/commit-prompt-state.ps1` for consistent commit messages and repo bootstrapping.
 - If a client cannot enforce prompt-end commits with hooks, the acting agent must run the commit script before completing the response.
 - Each agent personality must use a dedicated branch named `persona/<slug>`.
+- Before committing persona changes, refresh a canonical textual knowledge snapshot under `.ai/persona-knowledge/` so Git can merge rule knowledge as text instead of only as derived DB state.
+- Derived DB indexes must publish branch-aware knowledge hashes from `.ai/db-definitions.json`, including a total hash for cross-branch readers such as the archivist.
 - Every personality branch must carry the shared learning history in `.ai/SHARED_LEARNINGS.md`.
 - When one personality learns something useful from another, record it in `.ai/SHARED_LEARNINGS.md` so the history can be propagated across branches.
 

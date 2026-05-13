@@ -22,6 +22,8 @@ Use this skill to maintain a local archive of AI-agent customizations and reusab
 - Read and catalog files without executing the archived automation.
 - Store entries in `.ai/rule-archive/catalog.jsonl`.
 - Story indexes can be generated into `.ai/rule-archive/*.json` for fast lookup.
+- Canonical persona rule knowledge is snapshotted under `.ai/persona-knowledge/` before DB refreshes.
+- Branch-aware DB state hashes live under `.ai/rule-archive/db-state/` and are driven by `.ai/db-definitions.json`.
 - Keep compatibility notes for Copilot, Claude Code, and Cursor.
 - Prefer concise summaries and stable file paths.
 
@@ -30,6 +32,8 @@ Use this skill to maintain a local archive of AI-agent customizations and reusab
 - Populate or update records: [catalog-agent-asset.ps1](../../../scripts/catalog-agent-asset.ps1)
 - Query archive records: [query-agent-archive.ps1](../../../scripts/query-agent-archive.ps1)
 - Generate a Moltbook story index: [index-moltbook-stories.ps1](../../../scripts/index-moltbook-stories.ps1)
+- Refresh canonical persona knowledge: [sync-persona-knowledge.ps1](../../../scripts/sync-persona-knowledge.ps1)
+- Refresh branch-aware DB state hashes: [update-knowledge-db-state.ps1](../../../scripts/update-knowledge-db-state.ps1)
 
 ## Example: Add an archive record
 

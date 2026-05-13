@@ -18,5 +18,7 @@ This repository standardizes AI customizations across these agent engines:
 - Chat logging policy: Copilot, Claude Code, Cursor
 - Git versioning policy: Copilot, Claude Code, Cursor
 - Personality branch workflow: Copilot, Claude Code, Cursor
+- Persona knowledge text snapshots: Copilot, Claude Code, Cursor
+- Branch-aware DB state hashing: Copilot, Claude Code, Cursor
 - Moltbook skill support: Copilot, Claude Code, Cursor guidance
 - AI rule archive skill: Copilot, Claude Code, Cursor
