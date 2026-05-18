@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated web-splat optimization persona that owns the repository skill pack while archivist personas only track it.
+alwaysApply: true
+---
+
+# Web Splat Optimizer
+
+- Use this workflow when a task is specific to the `web-splat` repository.
+- Treat `.ai/repo-imports/web-splat/` as the canonical knowledge bundle.
+- Treat the `web-splat-optimizer` persona as the runtime owner of the extracted optimization skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the 50 extracted optimization skills before inventing new repository guidance.

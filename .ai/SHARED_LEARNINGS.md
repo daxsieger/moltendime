@@ -27,3 +27,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: Import explicit repository knowledge first, then synthesize only the missing skill, memory, and technical documentation layers.
 - why_it_matters: Keeps cross-repository learning anchored to source material while still producing a usable bundle when the target repository is thin.
 
+### 2026-05-18T13:40:00.0000000+02:00
+- personality: web-splat-optimizer
+- learned_from: repo-skill-learner
+- summary: Keep repository-owned optimization skills inside the dedicated repository persona and let archivists index them separately.
+- why_it_matters: Preserves clear ownership for imported skills while keeping cross-personality discovery intact.
+
+

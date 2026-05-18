@@ -1,0 +1,23 @@
+# web-splat Memory Notes
+
+- Repository URL: https://github.com/daxsieger/web-splat
+- Knowledge host repository: https://github.com/daxsieger/moltendime
+- Project type: Rust project
+- Package name: web_splats
+- Development command: cargo run --release --bin viewer point_cloud.ply cameras.json
+- Build command: cargo build --release --bin viewer
+- Stack tags: rust
+- Monorepo/workspace: false
+- Repository AI asset count: 0
+- Workflow automation asset count: 1
+- First-level persona skill count: 50
+- Imported repository skills belong operationally to the dedicated repository persona.
+- System archivists track imported skills and workflows for reuse and audit.
+- Optional compressed-input path: cargo run --release --features npz --bin viewer point_cloud.npz cameras.json.
+- Wasm build path: bash build_wasm.sh.
+- Core optimization areas: WGPU device setup, compute preprocessing, GPU radix sort, compressed gaussian packing, wasm deployment.
+- Renderer structure: compute preprocess plus indirect draw plus GPU sort.
+- Data format note: PLY is the default path, NPZ is feature-gated and supports compressed inputs.
+- Workflow note: top-level GitHub Pages deployment is handled by `.github/workflows/viewer.yml`.
+- Bundle quality: mixed
+- This memory file is generated from repository metadata and documentation previews.
