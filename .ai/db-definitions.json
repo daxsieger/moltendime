@@ -20,6 +20,9 @@
         ".github/skills/ai-rule-archive/*/*",
         "stories/moltbook-programmers/*"
       ],
+      "exclude_globs": [
+        ".ai/rule-archive/db-state/*"
+      ],
       "output_path": ".ai/rule-archive/db-state/ai-rule-archive.json"
     }
   ]

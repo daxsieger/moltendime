@@ -44,14 +44,25 @@ function Expand-BranchPatterns {
 }
 
 function Get-WorkingTreeMatches {
-    param([string[]]$PathGlobs)
+    param(
+        [string[]]$PathGlobs,
+        [string[]]$ExcludeGlobs = @()
+    )
 
     $matches = New-Object System.Collections.Generic.List[string]
     Get-ChildItem -Recurse -File | ForEach-Object {
         $relativePath = (Get-RelativeRepoPath -BasePath (Get-Location).Path -TargetPath $_.FullName).Replace('\', '/')
         foreach ($glob in $PathGlobs) {
             if ($relativePath -like $glob) {
-                if ($matches -notcontains $relativePath) {
+                $isExcluded = $false
+                foreach ($excludeGlob in $ExcludeGlobs) {
+                    if ($relativePath -like $excludeGlob) {
+                        $isExcluded = $true
+                        break
+                    }
+                }
+
+                if (-not $isExcluded -and $matches -notcontains $relativePath) {
                     $matches.Add($relativePath)
                 }
                 break
@@ -65,7 +76,8 @@ function Get-WorkingTreeMatches {
 function Get-BranchMatches {
     param(
         [string]$BranchName,
-        [string[]]$PathGlobs
+        [string[]]$PathGlobs,
+        [string[]]$ExcludeGlobs = @()
     )
 
     $files = @(git ls-tree -r --name-only $BranchName)
@@ -73,7 +85,15 @@ function Get-BranchMatches {
     foreach ($file in $files) {
         foreach ($glob in $PathGlobs) {
             if ($file -like $glob) {
-                if ($matches -notcontains $file) {
+                $isExcluded = $false
+                foreach ($excludeGlob in $ExcludeGlobs) {
+                    if ($file -like $excludeGlob) {
+                        $isExcluded = $true
+                        break
+                    }
+                }
+
+                if (-not $isExcluded -and $matches -notcontains $file) {
                     $matches.Add($file)
                 }
                 break
@@ -117,10 +137,10 @@ try {
         $branches = Expand-BranchPatterns -Patterns $db.branch_globs
         $branchStates = foreach ($branch in $branches) {
             $matchedPaths = if ($branch -eq $currentBranch) {
-                Get-WorkingTreeMatches -PathGlobs $db.path_globs
+                Get-WorkingTreeMatches -PathGlobs $db.path_globs -ExcludeGlobs $db.exclude_globs
             }
             else {
-                Get-BranchMatches -BranchName $branch -PathGlobs $db.path_globs
+                Get-BranchMatches -BranchName $branch -PathGlobs $db.path_globs -ExcludeGlobs $db.exclude_globs
             }
 
             $files = foreach ($relativePath in $matchedPaths) {
@@ -155,6 +175,7 @@ try {
             description = $db.description
             branch_globs = @($db.branch_globs)
             path_globs = @($db.path_globs)
+            exclude_globs = @($db.exclude_globs)
             total_knowledge_hash = Get-ContentSha256 -Text $totalHashInput
             branches = @($branchStates)
         }
