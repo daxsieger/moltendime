@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated WebSplatter paper persona that owns the extracted research skill pack while archivist personas only track it.
+alwaysApply: true
+---
+
+# WebSplatter Paper Learner
+
+- Use this workflow when a task is specific to the WebSplatter paper.
+- Treat `.ai/paper-imports/websplatter-arxiv-2602-03207/` as the canonical knowledge bundle.
+- Treat the `websplatter-paper-learner` persona as the runtime owner of the extracted paper skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted paper skill pack before inventing new research guidance.

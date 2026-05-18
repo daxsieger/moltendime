@@ -9,3 +9,4 @@ Use this skill to catalog AI skills, hooks, instructions, agents, and workflow a
 3. Use `./scripts/catalog-agent-asset.ps1` to add or refresh entries.
 4. Use `./scripts/query-agent-archive.ps1` to consult the archive.
 5. Keep compatibility coverage aligned across Copilot, Claude Code, and Cursor.
+6. Catalog dedicated repository personas, paper personas, and their local bundles as tracked assets without making the archivist their runtime owner.

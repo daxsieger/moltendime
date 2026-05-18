@@ -16,6 +16,8 @@ Use this skill to maintain a local archive of AI-agent customizations and reusab
 - Instructions
 - Custom agents
 - Algorithmic workflow notes for agents
+- Dedicated repository personas and paper personas
+- Local research and repository knowledge bundles under `.ai/repo-imports/` and `.ai/paper-imports/`
 
 ## Rules
 
@@ -23,6 +25,7 @@ Use this skill to maintain a local archive of AI-agent customizations and reusab
 - Store entries in `.ai/rule-archive/catalog.jsonl`.
 - Keep compatibility notes for Copilot, Claude Code, and Cursor.
 - Prefer concise summaries and stable file paths.
+- Catalog dedicated paper personas and paper bundles as tracked assets, not as archivist-owned first-level skills.
 
 ## Scripts
 

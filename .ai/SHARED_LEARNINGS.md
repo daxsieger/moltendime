@@ -33,4 +33,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: Keep repository-owned optimization skills inside the dedicated repository persona and let archivists index them separately.
 - why_it_matters: Preserves clear ownership for imported skills while keeping cross-personality discovery intact.
 
+### 2026-05-18T14:05:00.0000000+02:00
+- personality: paper-skill-learner
+- learned_from: ai-rule-learner
+- summary: Convert university papers into dedicated paper personas whose first-level skills remain evidence-anchored, while archivists catalog the resulting bundles.
+- why_it_matters: Keeps research knowledge attributable and reusable without collapsing paper-specific methods into the archivist itself.
+
 

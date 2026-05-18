@@ -1,0 +1,14 @@
+---
+description: Cursor equivalent for learning skills, memories, and technical documents from academic papers, creating dedicated paper personas, and storing local paper bundles.
+alwaysApply: true
+---
+
+# Paper Knowledge Loader Skill Equivalent
+
+- Use this workflow when a persona should learn from an academic paper or university research output.
+- Prefer the primary paper sections: abstract, methods, evaluation, appendices, and linked technical assets.
+- Create a dedicated paper persona for first-level skills extracted from that work.
+- Store local knowledge bundles under `.ai/paper-imports/<paper-slug>/`.
+- Keep memories, technical notes, and transferable skill packs separate.
+- Make archivist personas track and index these bundles rather than own the paper skills.
+- Keep coverage aligned with Copilot and Claude Code and record support in `SUPPORTED.md`.
