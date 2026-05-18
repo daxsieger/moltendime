@@ -35,6 +35,7 @@ Use this skill to ingest reusable AI knowledge from a research paper into the lo
 - Imported bundles: `.ai/paper-imports/<paper-slug>/`
 - Persona metadata: `.ai/personalities/paper-skill-learner.md`
 - Dedicated paper persona metadata: `.ai/personalities/<paper-persona>.md`
+- Automation script: `scripts/import-paper-knowledge.ps1`
 
 ## Expected Bundle Contents
 
@@ -57,3 +58,11 @@ Use this skill to ingest reusable AI knowledge from a research paper into the lo
 - extracted skill count
 - local bundle path
 - archivist catalog impact
+
+## Automation
+
+Use the shared automation script to scaffold a first-pass bundle from a paper URL:
+
+```powershell
+./scripts/import-paper-knowledge.ps1 -PaperUrl https://arxiv.org/abs/2512.08765
+```

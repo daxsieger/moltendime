@@ -10,3 +10,15 @@
 ```text
 Validate corrected local timestamp parsing
 ```
+
+### 2026-05-18T16:58:52.8757140+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+plain text logging smoke test
+```

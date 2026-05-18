@@ -9,6 +9,7 @@ alwaysApply: true
 - Prefer the primary paper sections: abstract, methods, evaluation, appendices, and linked technical assets.
 - Create a dedicated paper persona for first-level skills extracted from that work.
 - Store local knowledge bundles under `.ai/paper-imports/<paper-slug>/`.
+- Use `./scripts/import-paper-knowledge.ps1 -PaperUrl <paper-url>` to scaffold repeatable first-pass bundles.
 - Keep memories, technical notes, and transferable skill packs separate.
 - Make archivist personas track and index these bundles rather than own the paper skills.
 - Keep coverage aligned with Copilot and Claude Code and record support in `SUPPORTED.md`.

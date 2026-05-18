@@ -600,3 +600,15 @@ vorrei che imparassi anche i contenuti di https://arxiv.org/pdf/2602.03207 - è 
 ```text
 vorrei che imparassi anche i contenuti di https://arxiv.org/pdf/2602.03207 - è un paper legato a questi progetti che vorrei scaricassi in una persona dedicata e ne estraessi delle skill (creane almeno 50) basate sui risultati e metodi di questo lavoro universitario. In gerenale metti a punto una serie di skill per creare persona basate su lavori iuniversitari e fai si che il tutto venga regolarmente catalogato dalle persona strutturatli come l archivista.
 ```
+
+### 2026-05-18T17:06:41.1048550+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+1,2,3 - prova con questo lavoro sui video e l ai - https://huggingface.co/papers/2512.08765
+```

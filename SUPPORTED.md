@@ -26,3 +26,4 @@ This repository standardizes AI customizations across these agent engines:
 - Paper Skill Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Paper Knowledge Loader skill: Copilot, Claude Code, Cursor
 - WebSplatter Paper Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
+- Wan-Move Paper Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent

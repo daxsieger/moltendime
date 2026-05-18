@@ -1,0 +1,24 @@
+# wan-move-arxiv-2512-08765 Memory Notes
+
+- Paper URL: https://huggingface.co/papers/2512.08765
+- arXiv URL: https://arxiv.org/abs/2512.08765
+- HTML URL: https://arxiv.org/html/2512.08765v1
+- Title: Wan-Move: Motion-controllable Video Generation via Latent Trajectory Guidance
+- Authors: Ruihang Chu, Yefei He, Zhekai Chen, Shiwei Zhang, Xiaogang Xu, Bin Xia, Dingdong Wang, Hongwei Yi, Xihui Liu, Hengshuang Zhao, Yu Liu, Yingya Zhang, Yujiu Yang
+- Organizations: Tongyi Lab Alibaba Group, Tsinghua University, HKU, CUHK
+- Submission date: 2025-12-09
+- Subjects: Computer Vision and Pattern Recognition
+- Core method: latent trajectory guidance through first-frame feature replication in latent space.
+- Base model: Wan-I2V-14B.
+- Benchmark: MoveBench with 1,018 videos, 54 categories, point and mask annotations, and 5-second 480x832 clips.
+- Training set note: 2 million filtered 720p videos.
+- Training systems note: 64 NVIDIA A100 GPUs, 30,000 steps, FSDP, bfloat16, sequence parallel size 4.
+- Motion metric: end-point error on estimated trajectories.
+- Main quantitative result: Table 1 reports FID 12.2, FVD 83.5, PSNR 17.8, SSIM 0.64, EPE 2.6 on MoveBench.
+- Multi-object result: Table 2 reports EPE 2.2 with materially better FID and FVD than compared baselines.
+- Human-study note: Table 3 shows competitive results against Kling 1.5 Pro and strong wins over academic baselines.
+- Latency note: Table 5 shows direct concatenation with lower latency than ControlNet while preserving quality.
+- Control-density note: training with up to 200 tracks is best, but inference generalizes to denser trajectories.
+- Failure note: long trajectory disappearance, crowded interactions, and physically implausible motions remain difficult.
+- Ownership note: extracted paper skills belong operationally to the dedicated paper persona.
+- Archivist note: system archivists should catalog the paper bundle and persona for discovery and audit.

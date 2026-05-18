@@ -18,3 +18,7 @@ Each paper gets its own folder:
 - Convert research contributions into transferable first-level skills owned by a dedicated paper persona.
 - Keep archivist personas focused on cataloging and discovery rather than runtime ownership.
 - Mark inferred implementation guidance clearly when it is not stated directly in the source material.
+
+## Automation
+
+- Use `./scripts/import-paper-knowledge.ps1 -PaperUrl <paper-url>` to generate a first-pass bundle scaffold before refining the paper-specific skill packs.

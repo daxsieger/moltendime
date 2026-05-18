@@ -39,4 +39,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: Convert university papers into dedicated paper personas whose first-level skills remain evidence-anchored, while archivists catalog the resulting bundles.
 - why_it_matters: Keeps research knowledge attributable and reusable without collapsing paper-specific methods into the archivist itself.
 
+### 2026-05-18T15:45:00.0000000+02:00
+- personality: wan-move-paper-learner
+- learned_from: paper-skill-learner
+- summary: Separate method-design skills, benchmark-design skills, and failure-analysis skills when importing controllable-generation papers.
+- why_it_matters: Prevents benchmark and stress-test insights from being lost inside a pure method summary.
+
 

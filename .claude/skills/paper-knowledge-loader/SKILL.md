@@ -11,3 +11,4 @@ Use this skill to learn skills, memories, and technical documents from academic 
 5. Split extracted skills into compact packs when the paper yields many transferable techniques.
 6. Make archivist personas catalog the bundle and persona rather than owning the paper skills themselves.
 7. Keep Copilot, Claude Code, and Cursor coverage aligned and record support in `SUPPORTED.md`.
+8. Use `./scripts/import-paper-knowledge.ps1 -PaperUrl <paper-url>` when you want a repeatable first-pass scaffold.

@@ -19,7 +19,7 @@ if (-not [string]::IsNullOrWhiteSpace($raw)) {
 
 function Find-FirstValue {
     param(
-        [Parameter(Mandatory = $true)] $Node,
+        $Node,
         [Parameter(Mandatory = $true)] [string[]]$Names
     )
 

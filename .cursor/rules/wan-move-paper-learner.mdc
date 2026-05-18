@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated Wan-Move paper persona that owns the extracted research skill pack while archivist personas only track it.
+alwaysApply: true
+---
+
+# Wan-Move Paper Learner
+
+- Use this workflow when a task is specific to the Wan-Move paper.
+- Treat `.ai/paper-imports/wan-move-arxiv-2512-08765/` as the canonical knowledge bundle.
+- Treat the `wan-move-paper-learner` persona as the runtime owner of the extracted paper skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted paper skill pack before inventing new research guidance.
