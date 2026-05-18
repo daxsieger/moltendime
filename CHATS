@@ -528,3 +528,15 @@ vorrei creare una persona capace di imparare skill da altri progetti dato un rep
 ```text
 fai 1,2,3 - usa https://github.com/daxsieger/visionary
 ```
+
+### 2026-05-18T13:19:18.0706790+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+1,3
+```

@@ -3,15 +3,22 @@
 - repository: https://github.com/daxsieger/visionary
 - imported_at: 2026-05-18
 - bundle_kind: inferred
+- project_type: TypeScript Node/Web application or library
+- stack_tags: node, typescript, vite
 
 ## Explicit Sources Read
 
 - `README.md`
 - `package.json`
+- `tsconfig.json`
 - `vite.config.ts`
 - `src/index.ts`
 - `src/app/index.ts`
+- `src/app/unified-model-loader.ts`
+- `src/config/ort-config.ts`
+- `src/renderer/gaussian_renderer.ts`
 - `onnx-export/README.md`
+- `onnx-export/ONNXExample-4dgs/README.md`
 - `demo/showcase/README.md`
 
 ## Search Outcome

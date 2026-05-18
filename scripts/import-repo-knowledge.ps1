@@ -67,7 +67,7 @@ function Get-TextPreview {
 function Get-DocumentationFiles {
     param([string]$RepositoryRoot)
 
-    $excluded = @('node_modules', 'dist', 'build', '.git')
+    $excluded = @('node_modules', 'dist', 'build', '.git', 'vendor', 'third-party', 'third_party', '.venv', 'venv', '__pycache__')
     return Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File |
         Where-Object {
             $_.Extension -in @('.md', '.mdc', '.txt') -and
@@ -83,7 +83,7 @@ function Get-ExplicitAiAssets {
     param([string]$RepositoryRoot)
 
     $assetNames = @('AGENTS.md', 'CLAUDE.md', 'copilot-instructions.md', 'SKILL.md')
-    $excluded = @('node_modules', 'dist', 'build', '.git')
+    $excluded = @('node_modules', 'dist', 'build', '.git', 'vendor', 'third-party', 'third_party', '.venv', 'venv', '__pycache__')
 
     return Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File |
         Where-Object {
@@ -96,6 +96,16 @@ function Get-ExplicitAiAssets {
         Sort-Object
 }
 
+function Format-Bool {
+    param([bool]$Value)
+
+    if ($Value) {
+        return 'true'
+    }
+
+    return 'false'
+}
+
 function Get-PackageMetadata {
     param([string]$RepositoryRoot)
 
@@ -105,6 +115,87 @@ function Get-PackageMetadata {
     }
 
     return Get-Content -LiteralPath $packagePath -Raw | ConvertFrom-Json
+}
+
+function Test-FileExists {
+    param(
+        [string]$RepositoryRoot,
+        [string]$RelativePath
+    )
+
+    return Test-Path -LiteralPath (Join-Path $RepositoryRoot $RelativePath)
+}
+
+function Get-StackProfile {
+    param([string]$RepositoryRoot)
+
+    $packageMetadata = Get-PackageMetadata -RepositoryRoot $RepositoryRoot
+    $hasPackageJson = $null -ne $packageMetadata
+    $hasTsConfig = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'tsconfig.json'
+    $hasViteConfig = (Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'vite.config.ts') -or (Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'vite.config.js')
+    $hasPyProject = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'pyproject.toml'
+    $hasRequirements = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'requirements.txt'
+    $hasCargo = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'Cargo.toml'
+    $hasGoMod = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'go.mod'
+    $hasPnpmWorkspace = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'pnpm-workspace.yaml'
+    $hasTurbo = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'turbo.json'
+    $hasNx = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'nx.json'
+    $hasLerna = Test-FileExists -RepositoryRoot $RepositoryRoot -RelativePath 'lerna.json'
+    $hasYarnWorkspaces = $false
+    if ($hasPackageJson -and $packageMetadata.PSObject.Properties.Name -contains 'workspaces' -and $packageMetadata.workspaces) {
+        $hasYarnWorkspaces = $true
+    }
+
+    $stackTags = New-Object System.Collections.Generic.List[string]
+    if ($hasPackageJson) { $stackTags.Add('node') }
+    if ($hasTsConfig) { $stackTags.Add('typescript') }
+    if ($hasViteConfig) { $stackTags.Add('vite') }
+    if ($hasPyProject -or $hasRequirements) { $stackTags.Add('python') }
+    if ($hasCargo) { $stackTags.Add('rust') }
+    if ($hasGoMod) { $stackTags.Add('go') }
+
+    $isMonorepo = $hasPnpmWorkspace -or $hasTurbo -or $hasNx -or $hasLerna -or $hasYarnWorkspaces
+
+    $projectType = 'repository with no recognized primary build stack'
+    if ($hasPackageJson -and $hasTsConfig) {
+        $projectType = 'TypeScript Node/Web application or library'
+    }
+    elseif ($hasPackageJson) {
+        $projectType = 'JavaScript Node/Web application or library'
+    }
+    elseif ($hasPyProject -or $hasRequirements) {
+        $projectType = 'Python project'
+    }
+    elseif ($hasCargo) {
+        $projectType = 'Rust project'
+    }
+    elseif ($hasGoMod) {
+        $projectType = 'Go project'
+    }
+
+    if ($isMonorepo) {
+        $projectType = "$projectType (monorepo/workspace)"
+        $stackTags.Add('monorepo')
+    }
+
+    return [ordered]@{
+        packageMetadata = $packageMetadata
+        projectType = $projectType
+        stackTags = @($stackTags | Select-Object -Unique)
+        isMonorepo = $isMonorepo
+        hasPackageJson = $hasPackageJson
+        hasTsConfig = $hasTsConfig
+        hasViteConfig = $hasViteConfig
+        hasPyProject = $hasPyProject
+        hasRequirements = $hasRequirements
+        hasCargo = $hasCargo
+        hasGoMod = $hasGoMod
+        hasPnpmWorkspace = $hasPnpmWorkspace
+        hasTurbo = $hasTurbo
+        hasNx = $hasNx
+        hasLerna = $hasLerna
+        hasYarnWorkspaces = $hasYarnWorkspaces
+    }
 }
 
 function Ensure-Directory {
@@ -142,11 +233,12 @@ try {
 
     $readmePath = Get-PrimaryReadmePath -RepositoryRoot $clonePath
     $readmePreview = Get-TextPreview -Path $readmePath -MaxLines 120
-    $packageMetadata = Get-PackageMetadata -RepositoryRoot $clonePath
+    $stackProfile = Get-StackProfile -RepositoryRoot $clonePath
+    $packageMetadata = $stackProfile.packageMetadata
     $documentationFiles = @(Get-DocumentationFiles -RepositoryRoot $clonePath)
     $explicitAiAssets = @(Get-ExplicitAiAssets -RepositoryRoot $clonePath)
 
-    $repoType = if ($packageMetadata) { 'JavaScript or TypeScript application/library' } else { 'repository with no detected package.json' }
+    $repoType = $stackProfile.projectType
     $devCommand = if ($packageMetadata -and $packageMetadata.scripts.dev) { [string]$packageMetadata.scripts.dev } else { 'not detected' }
     $buildCommand = if ($packageMetadata -and $packageMetadata.scripts.build) { [string]$packageMetadata.scripts.build } else { 'not detected' }
     $packageName = if ($packageMetadata -and $packageMetadata.name) { [string]$packageMetadata.name } else { 'not detected' }
@@ -186,7 +278,13 @@ try {
         '',
         '- Convert the documentation set into concise memory notes and operational summaries.',
         '- Treat package metadata and public source entrypoints as stable anchors for inferred workflows.',
-        '- Mark all inferred content explicitly when explicit AI assets are missing.'
+        '- Mark all inferred content explicitly when explicit AI assets are missing.',
+        '',
+        '### 3. Stack and workspace interpretation',
+        '',
+        "- Detected project type: $repoType",
+        "- Detected stack tags: $(if ($stackProfile.stackTags.Count -gt 0) { ($stackProfile.stackTags -join ', ') } else { 'none' })",
+        "- Monorepo/workspace detected: $(Format-Bool -Value $stackProfile.isMonorepo)"
     )
 
     $memoriesContent = @(
@@ -198,6 +296,8 @@ try {
         "- Package name: $packageName",
         "- Development command: $devCommand",
         "- Build command: $buildCommand",
+        "- Stack tags: $(if ($stackProfile.stackTags.Count -gt 0) { ($stackProfile.stackTags -join ', ') } else { 'none' })",
+        "- Monorepo/workspace: $(Format-Bool -Value $stackProfile.isMonorepo)",
         "- Bundle quality: $bundleKind",
         '- This memory file is generated from repository metadata and documentation previews.'
     )
@@ -220,6 +320,8 @@ try {
         "- repository: $RepoUrl",
         "- imported_at: $(Get-Date -Format 'yyyy-MM-dd')",
         "- bundle_kind: $bundleKind",
+        "- project_type: $repoType",
+        "- stack_tags: $(if ($stackProfile.stackTags.Count -gt 0) { ($stackProfile.stackTags -join ', ') } else { 'none' })",
         '',
         '## Explicit AI Assets',
         ''
@@ -279,6 +381,9 @@ try {
         bundle = $slug
         bundlePath = $bundlePath.Replace('\\', '/')
         bundleType = $bundleKind
+        projectType = $repoType
+        stackTags = @($stackProfile.stackTags)
+        isMonorepo = $stackProfile.isMonorepo
         knowledgeHostRepo = $hostRepoUrl
         explicitAiAssetCount = $explicitAiAssets.Count
         documentationFileCount = $documentationFiles.Count

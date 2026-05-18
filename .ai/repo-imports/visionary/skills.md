@@ -31,15 +31,29 @@
 - Use `loadUnifiedModel` or `UnifiedModelLoader` for mixed asset loading.
 - Configure ONNX Runtime Web through `initOrtEnvironment`, `setOrtWasmPaths`, and related helpers before loading ONNX-based models.
 
-### 4. Prepare custom Gaussian algorithms for runtime execution
+### 4. Route assets through the unified loader boundary
+
+- `UnifiedModelLoader` distinguishes Gaussian-oriented inputs from mesh-oriented inputs.
+- `.compressed.ply`, `.onnx`, `.sog`, `.ksplat`, `.splat`, and `.spz` are treated as Gaussian assets.
+- Plain `.ply` is resolved dynamically between mesh PLY and 3DGS-style Gaussian PLY.
+- FBX files are routed through a dedicated FBX loader manager while other standard assets flow through the universal loader.
+
+### 5. Prepare custom Gaussian algorithms for runtime execution
 
 - Follow the `Gaussian Generator` contract documented in `onnx-export/README.md`.
 - Export models to ONNX with stable graph shapes and WebGPU-friendly indexing.
 - Avoid problematic normalization operators and very large `Concat` or `Split` nodes.
 - Use the provided avatar, 4DGS, and scaffold examples as reference pipelines.
+- For the 4DGS path, the exporter docs require patching the upstream `train.py` flow to persist the deformation AABB before export.
 
-### 5. Validate showcase and demo deployments
+### 6. Validate showcase and demo deployments
 
 - Use `demo/showcase/README.md` as the deployment recipe for local showcase pages.
 - Keep model assets and ORT wasm files reachable from the served site.
 - When deploying via CDN/importmap, provide `three` and `onnxruntime-web/webgpu` as external dependencies.
+
+### 7. Respect the runtime and build constraints
+
+- `tsconfig.json` enforces strict TypeScript settings over the `src/` tree.
+- `vite.config.ts` builds the project as a library and enforces a 5 MB chunk ceiling for most outputs.
+- The WebGPU renderer is optimized around cached GPU resources and global-capacity management rather than per-frame allocation.
