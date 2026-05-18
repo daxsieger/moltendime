@@ -18,6 +18,8 @@ Use this skill to ingest reusable AI knowledge from a target GitHub repository i
 ## What to Import First
 
 - Existing skills, prompts, instructions, hooks, agents, and rules
+- Existing repository skills under `.github/skills/` as first-level skills for the dedicated repository persona
+- Existing workflow automation under `.github/workflows/` as operational context to track with the bundle
 - Existing memories, notes, ADRs, design docs, runbooks, and architecture docs
 - Technical markdown that explains workflows, conventions, or domain knowledge
 
@@ -44,6 +46,12 @@ If the target repository does not contain enough explicit AI assets:
 - `memories.md`: stable repository facts and conventions
 - `technical-docs.md`: concise technical explanation of key workflows
 - `sources.md`: source paths, URLs, and inference notes
+
+## Ownership Model
+
+- The dedicated repository persona is the runtime receptacle for repository-specific first-level skills.
+- System personas such as the archivist keep track of imported AI assets and workflow automation for discovery, audit, and reuse.
+- Do not collapse repository-specific skills into the archivist persona itself.
 
 ## External Project Bridge
 

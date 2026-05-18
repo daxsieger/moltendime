@@ -552,3 +552,15 @@ fai 1,2,3 - usa https://github.com/daxsieger/visionary
 ```text
 ottimo ma ha rilevato nel repo https://github.com/daxsieger/visionary/tree/main/.github/skills e https://github.com/daxsieger/visionary/tree/main/.github/workflow?
 ```
+
+### 2026-05-18T13:31:36.0000000+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: manual backfill
+- backfilled: true
+
+```text
+fai 1,2,3 - ma attenzione, per skill di primo livello si intende comunque skill legate alla persona dedicata al repository o che sta imparando tutto del repository - in linea di principio la logica è che una persona diventa il ricettacolo di queste skill e che le personas di sistema come l'archivista ne tengano traccia
+```

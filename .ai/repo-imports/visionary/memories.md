@@ -1,21 +1,17 @@
-# Visionary Memory Notes
+# visionary Memory Notes
 
 - Repository URL: https://github.com/daxsieger/visionary
-- Project type: TypeScript WebGPU rendering library and browser demos for Gaussian Splatting and mesh rendering.
-- Stack tags: node, typescript, vite.
-- Monorepo/workspace: false.
-- Main runtime stack: WebGPU, ONNX Runtime Web, three.js, gl-matrix, Vite, TypeScript.
-- Package name: `visionary-core`.
-- Default dev server port: `3000`.
-- Main development command: `npm run dev`.
-- Main build command: `npm run build`.
-- Public package outputs: `dist/visionary-core.es.js`, `dist/visionary-core.umd.js`, `dist/index.d.ts`.
-- Public API entrypoint: `src/index.ts`.
-- Asset routing note: the unified loader separates Gaussian-specific formats from mesh formats and resolves `.ply` dynamically.
-- Asset loading focus: static Gaussian formats, mesh formats, ONNX-based dynamic Gaussian and avatar formats.
-- Technical constraint: a recent Chromium browser with WebGPU is required.
-- Platform note: Ubuntu is documented as unsupported for the fp16 ONNX pipeline; macOS is documented as slower and not recommended for heavy workloads.
-- Integration note: ORT wasm assets must stay reachable and correctly configured for ONNX features.
-- ORT note: runtime configuration can be applied immediately or delayed until `window.ort` becomes available.
-- Renderer note: the Gaussian renderer caches GPU resources and manages a global splat capacity for multi-model rendering.
-- Knowledge quality: this bundle is inferred from project docs and source layout because explicit AI assets were not found.
+- Knowledge host repository: https://github.com/daxsieger/moltendime
+- Project type: TypeScript Node/Web application or library
+- Package name: visionary-core
+- Development command: vite
+- Build command: vite build && npm run build:types
+- Stack tags: node, typescript, vite
+- Monorepo/workspace: false
+- Repository AI asset count: 13
+- Workflow automation asset count: 1
+- First-level persona skill count: 13
+- Imported repository skills belong operationally to the dedicated repository persona.
+- System archivists track imported skills and workflows for reuse and audit.
+- Bundle quality: mixed
+- This memory file is generated from repository metadata and documentation previews.

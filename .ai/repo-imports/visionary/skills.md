@@ -2,58 +2,71 @@
 
 - source_repo: https://github.com/daxsieger/visionary
 - knowledge_host_repo: https://github.com/daxsieger/moltendime
-- bundle_type: inferred
+- bundle_type: mixed
 - generated_for_persona: repo-skill-learner
+- tracked_by_persona: ai-rule-learner
 
-## Imported Explicit AI Assets
+## Imported Repository AI Assets
 
-- No explicit AI customization files were found in the target repository root or documentation surface checked during import.
+- .github/skills/dynamic-model-update-architecture/SKILL.md
+- .github/skills/fallback-safe-runtime/SKILL.md
+- .github/skills/format-aware-asset-routing/SKILL.md
+- .github/skills/gpu-pipeline-choreography/SKILL.md
+- .github/skills/input-coalescing-controls/SKILL.md
+- .github/skills/lazy-transform-sync/SKILL.md
+- .github/skills/memory-layout-and-packing/SKILL.md
+- .github/skills/precision-stratified-execution/SKILL.md
+- .github/skills/profiling-and-readback-discipline/SKILL.md
+- .github/skills/render-loop-staging/SKILL.md
+- .github/skills/resource-caching-and-pooling/SKILL.md
+- .github/skills/visionary-optimization-catalog/SKILL.md
+- .github/skills/zero-copy-gpu-inference/SKILL.md
+
+## Imported Automation Assets
+
+- .github/workflows/static.yml
+
+## First-Level Persona Skills
+
+- The dedicated repository persona is the receptacle for imported repository skills.
+- System personas such as `ai-rule-learner` should index and track these skills, not replace the repository persona as their runtime owner.
+
+- internalize skill: dynamic-model-update-architecture
+- internalize skill: fallback-safe-runtime
+- internalize skill: format-aware-asset-routing
+- internalize skill: gpu-pipeline-choreography
+- internalize skill: input-coalescing-controls
+- internalize skill: lazy-transform-sync
+- internalize skill: memory-layout-and-packing
+- internalize skill: precision-stratified-execution
+- internalize skill: profiling-and-readback-discipline
+- internalize skill: render-loop-staging
+- internalize skill: resource-caching-and-pooling
+- internalize skill: visionary-optimization-catalog
+- internalize skill: zero-copy-gpu-inference
 
 ## Inferred Reusable Skills
 
-### 1. Bootstrap the local Visionary workspace
+### 1. Repository bootstrap
 
-- Install Node.js 18+.
-- Run `npm install` in the repository root.
-- Start the development server with `npm run dev`.
-- Open `http://localhost:3000/demo/simple/index.html` or another demo under `demo/`.
+- Read the primary README first.
+- Development command: vite
+- Build command: vite build && npm run build:types
+- Capture additional setup requirements from the listed documentation files.
 
-### 2. Build and ship the browser library
+### 2. Technical knowledge extraction
 
-- Use `npm run build` to produce the `dist/` library bundles.
-- The package publishes `visionary-core.es.js`, `visionary-core.umd.js`, and TypeScript declarations from `dist/`.
-- Treat `three`, `gl-matrix`, and `onnxruntime-web` as key runtime dependencies when integrating Visionary into another application.
+- Convert the documentation set into concise memory notes and operational summaries.
+- Treat package metadata and public source entrypoints as stable anchors for inferred workflows.
+- Mark all inferred content explicitly when explicit AI assets are missing.
 
-### 3. Integrate VisionaryCore into an existing web app
+### 3. Stack and workspace interpretation
 
-- Import the public API from `src/index.ts`.
-- Use `initThreeContext` to initialize the rendering context.
-- Use `loadUnifiedModel` or `UnifiedModelLoader` for mixed asset loading.
-- Configure ONNX Runtime Web through `initOrtEnvironment`, `setOrtWasmPaths`, and related helpers before loading ONNX-based models.
+- Detected project type: TypeScript Node/Web application or library
+- Detected stack tags: node, typescript, vite
+- Monorepo/workspace detected: false
 
-### 4. Route assets through the unified loader boundary
+### 4. Persona ownership and archival tracking
 
-- `UnifiedModelLoader` distinguishes Gaussian-oriented inputs from mesh-oriented inputs.
-- `.compressed.ply`, `.onnx`, `.sog`, `.ksplat`, `.splat`, and `.spz` are treated as Gaussian assets.
-- Plain `.ply` is resolved dynamically between mesh PLY and 3DGS-style Gaussian PLY.
-- FBX files are routed through a dedicated FBX loader manager while other standard assets flow through the universal loader.
-
-### 5. Prepare custom Gaussian algorithms for runtime execution
-
-- Follow the `Gaussian Generator` contract documented in `onnx-export/README.md`.
-- Export models to ONNX with stable graph shapes and WebGPU-friendly indexing.
-- Avoid problematic normalization operators and very large `Concat` or `Split` nodes.
-- Use the provided avatar, 4DGS, and scaffold examples as reference pipelines.
-- For the 4DGS path, the exporter docs require patching the upstream `train.py` flow to persist the deformation AABB before export.
-
-### 6. Validate showcase and demo deployments
-
-- Use `demo/showcase/README.md` as the deployment recipe for local showcase pages.
-- Keep model assets and ORT wasm files reachable from the served site.
-- When deploying via CDN/importmap, provide `three` and `onnxruntime-web/webgpu` as external dependencies.
-
-### 7. Respect the runtime and build constraints
-
-- `tsconfig.json` enforces strict TypeScript settings over the `src/` tree.
-- `vite.config.ts` builds the project as a library and enforces a 5 MB chunk ceiling for most outputs.
-- The WebGPU renderer is optimized around cached GPU resources and global-capacity management rather than per-frame allocation.
+- The repository-dedicated persona owns the imported and inferred first-level skills for this repository.
+- The archivist persona keeps an index of imported AI assets and automation assets for cross-personality discovery and audit.

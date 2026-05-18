@@ -68,7 +68,7 @@ function Get-DocumentationFiles {
     param([string]$RepositoryRoot)
 
     $excluded = @('node_modules', 'dist', 'build', '.git', 'vendor', 'third-party', 'third_party', '.venv', 'venv', '__pycache__')
-    return Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File |
+    return Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File -Force |
         Where-Object {
             $_.Extension -in @('.md', '.mdc', '.txt') -and
             ($_.FullName.Split([System.IO.Path]::DirectorySeparatorChar) | Where-Object { $excluded -contains $_ }).Count -eq 0
@@ -85,15 +85,61 @@ function Get-ExplicitAiAssets {
     $assetNames = @('AGENTS.md', 'CLAUDE.md', 'copilot-instructions.md', 'SKILL.md')
     $excluded = @('node_modules', 'dist', 'build', '.git', 'vendor', 'third-party', 'third_party', '.venv', 'venv', '__pycache__')
 
-    return Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File |
+    return Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File -Force |
+        ForEach-Object {
+            [ordered]@{
+                Item = $_
+                RelativePath = [System.IO.Path]::GetRelativePath($RepositoryRoot, $_.FullName).Replace('\\', '/')
+            }
+        } |
         Where-Object {
-            $assetNames -contains $_.Name -and
-            ($_.FullName.Split([System.IO.Path]::DirectorySeparatorChar) | Where-Object { $excluded -contains $_ }).Count -eq 0
+            ($assetNames -contains $_.Item.Name) -and
+            $_.RelativePath.StartsWith('.github/skills/') -and
+            ($_.Item.FullName.Split([System.IO.Path]::DirectorySeparatorChar) | Where-Object { $excluded -contains $_ }).Count -eq 0
         } |
         ForEach-Object {
-            [System.IO.Path]::GetRelativePath($RepositoryRoot, $_.FullName).Replace('\\', '/')
+            $_.RelativePath
         } |
         Sort-Object
+}
+
+function Get-AutomationAssets {
+    param([string]$RepositoryRoot)
+
+    $excluded = @('node_modules', 'dist', 'build', '.git', 'vendor', 'third-party', 'third_party', '.venv', 'venv', '__pycache__')
+
+    return Get-ChildItem -LiteralPath $RepositoryRoot -Recurse -File -Force |
+        ForEach-Object {
+            [ordered]@{
+                Item = $_
+                RelativePath = [System.IO.Path]::GetRelativePath($RepositoryRoot, $_.FullName).Replace('\\', '/')
+            }
+        } |
+        Where-Object {
+            ($_.Item.Extension -in @('.yml', '.yaml')) -and
+            $_.RelativePath.StartsWith('.github/workflows/') -and
+            ($_.Item.FullName.Split([System.IO.Path]::DirectorySeparatorChar) | Where-Object { $excluded -contains $_ }).Count -eq 0
+        } |
+        ForEach-Object {
+            $_.RelativePath
+        } |
+        Sort-Object
+}
+
+function Convert-AssetPathToSkillSlug {
+    param([string]$AssetPath)
+
+    $normalized = $AssetPath.Replace('\\', '/')
+    if ($normalized -match '^\.github/skills/([^/]+)/SKILL\.md$') {
+        return $Matches[1]
+    }
+
+    $fileName = [System.IO.Path]::GetFileNameWithoutExtension($normalized)
+    if (-not [string]::IsNullOrWhiteSpace($fileName)) {
+        return $fileName.ToLowerInvariant()
+    }
+
+    return $normalized.ToLowerInvariant()
 }
 
 function Format-Bool {
@@ -237,12 +283,14 @@ try {
     $packageMetadata = $stackProfile.packageMetadata
     $documentationFiles = @(Get-DocumentationFiles -RepositoryRoot $clonePath)
     $explicitAiAssets = @(Get-ExplicitAiAssets -RepositoryRoot $clonePath)
+    $automationAssets = @(Get-AutomationAssets -RepositoryRoot $clonePath)
+    $personaSkillSlugs = @($explicitAiAssets | ForEach-Object { Convert-AssetPathToSkillSlug -AssetPath $_ } | Select-Object -Unique)
 
     $repoType = $stackProfile.projectType
     $devCommand = if ($packageMetadata -and $packageMetadata.scripts.dev) { [string]$packageMetadata.scripts.dev } else { 'not detected' }
     $buildCommand = if ($packageMetadata -and $packageMetadata.scripts.build) { [string]$packageMetadata.scripts.build } else { 'not detected' }
     $packageName = if ($packageMetadata -and $packageMetadata.name) { [string]$packageMetadata.name } else { 'not detected' }
-    $bundleKind = if ($explicitAiAssets.Count -gt 0) { 'mixed' } else { 'inferred' }
+    $bundleKind = if ($explicitAiAssets.Count -gt 0 -or $automationAssets.Count -gt 0) { 'mixed' } else { 'inferred' }
 
     $skillsContent = @(
         "# Bundle: $slug",
@@ -251,8 +299,9 @@ try {
         "- knowledge_host_repo: $hostRepoUrl",
         "- bundle_type: $bundleKind",
         "- generated_for_persona: repo-skill-learner",
+        "- tracked_by_persona: ai-rule-learner",
         '',
-        '## Imported Explicit AI Assets',
+        '## Imported Repository AI Assets',
         ''
     )
 
@@ -261,6 +310,33 @@ try {
     }
     else {
         $skillsContent += '- No explicit AI customization files were detected during import.'
+    }
+
+    $skillsContent += @(
+        '',
+        '## Imported Automation Assets',
+        ''
+    )
+    if ($automationAssets.Count -gt 0) {
+        $skillsContent += $automationAssets | ForEach-Object { "- $_" }
+    }
+    else {
+        $skillsContent += '- No repository workflow automation files were detected during import.'
+    }
+
+    $skillsContent += @(
+        '',
+        '## First-Level Persona Skills',
+        '',
+        '- The dedicated repository persona is the receptacle for imported repository skills.',
+        '- System personas such as `ai-rule-learner` should index and track these skills, not replace the repository persona as their runtime owner.',
+        ''
+    )
+    if ($personaSkillSlugs.Count -gt 0) {
+        $skillsContent += $personaSkillSlugs | ForEach-Object { "- internalize skill: $_" }
+    }
+    else {
+        $skillsContent += '- No explicit repository skill files were found, so the repository persona must rely on inferred first-level skills.'
     }
 
     $skillsContent += @(
@@ -284,7 +360,12 @@ try {
         '',
         "- Detected project type: $repoType",
         "- Detected stack tags: $(if ($stackProfile.stackTags.Count -gt 0) { ($stackProfile.stackTags -join ', ') } else { 'none' })",
-        "- Monorepo/workspace detected: $(Format-Bool -Value $stackProfile.isMonorepo)"
+        "- Monorepo/workspace detected: $(Format-Bool -Value $stackProfile.isMonorepo)",
+        '',
+        '### 4. Persona ownership and archival tracking',
+        '',
+        '- The repository-dedicated persona owns the imported and inferred first-level skills for this repository.',
+        '- The archivist persona keeps an index of imported AI assets and automation assets for cross-personality discovery and audit.'
     )
 
     $memoriesContent = @(
@@ -298,6 +379,11 @@ try {
         "- Build command: $buildCommand",
         "- Stack tags: $(if ($stackProfile.stackTags.Count -gt 0) { ($stackProfile.stackTags -join ', ') } else { 'none' })",
         "- Monorepo/workspace: $(Format-Bool -Value $stackProfile.isMonorepo)",
+        "- Repository AI asset count: $($explicitAiAssets.Count)",
+        "- Workflow automation asset count: $($automationAssets.Count)",
+        "- First-level persona skill count: $($personaSkillSlugs.Count)",
+        '- Imported repository skills belong operationally to the dedicated repository persona.',
+        '- System archivists track imported skills and workflows for reuse and audit.',
         "- Bundle quality: $bundleKind",
         '- This memory file is generated from repository metadata and documentation previews.'
     )
@@ -328,6 +414,17 @@ try {
     )
     if ($explicitAiAssets.Count -gt 0) {
         $sourcesContent += $explicitAiAssets | ForEach-Object { "- $_" }
+    }
+    else {
+        $sourcesContent += '- none detected'
+    }
+    $sourcesContent += @(
+        '',
+        '## Workflow Automation Assets',
+        ''
+    )
+    if ($automationAssets.Count -gt 0) {
+        $sourcesContent += $automationAssets | ForEach-Object { "- $_" }
     }
     else {
         $sourcesContent += '- none detected'
@@ -386,6 +483,8 @@ try {
         isMonorepo = $stackProfile.isMonorepo
         knowledgeHostRepo = $hostRepoUrl
         explicitAiAssetCount = $explicitAiAssets.Count
+        automationAssetCount = $automationAssets.Count
+        personaSkillCount = $personaSkillSlugs.Count
         documentationFileCount = $documentationFiles.Count
     } | ConvertTo-Json -Depth 10
 }
