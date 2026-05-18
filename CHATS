@@ -588,3 +588,15 @@ ok ora crea una persona e importa https://github.com/daxsieger/web-splat - estra
 ```text
 vorrei che imparassi anche i contenuti di https://arxiv.org/pdf/2602.03207 - è un paper legato a questi progetti che vorrei scaricassi in una persona dedicata e ne estraessi delle skill (creane almeno 50) basate sui risultati e metodi di questo lavoro universitario. In gerenale metti a punto una serie di skill per creare persona basate su lavori iuniversitari e fai si che il tutto venga regolarmente catalogato dalle persona strutturatli come l archivista.
 ```
+
+### 2026-05-18T15:30:44.2500400+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+vorrei che imparassi anche i contenuti di https://arxiv.org/pdf/2602.03207 - è un paper legato a questi progetti che vorrei scaricassi in una persona dedicata e ne estraessi delle skill (creane almeno 50) basate sui risultati e metodi di questo lavoro universitario. In gerenale metti a punto una serie di skill per creare persona basate su lavori iuniversitari e fai si che il tutto venga regolarmente catalogato dalle persona strutturatli come l archivista.
+```
