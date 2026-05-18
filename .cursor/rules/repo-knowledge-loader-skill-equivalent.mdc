@@ -1,0 +1,13 @@
+---
+description: Cursor equivalent for learning skills, memories, and technical documents from a GitHub repository, inferring missing assets, and maintaining an external bridge reference.
+alwaysApply: true
+---
+
+# Repo Knowledge Loader Skill Equivalent
+
+- Use this workflow when a repository should learn from another GitHub repository.
+- Prefer explicit source assets such as skills, rules, memories, runbooks, and technical docs.
+- If those assets are missing, infer a concise bundle from the codebase, scripts, and repository conventions.
+- Store local knowledge bundles under `.ai/repo-imports/<repo-slug>/`.
+- Use `.github/skills/repo-knowledge-loader/templates/external-bridge-skill.md` as the reference bridge for external repositories.
+- Keep coverage aligned with Copilot and Claude Code and record support in `SUPPORTED.md`.
