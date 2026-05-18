@@ -612,3 +612,15 @@ vorrei che imparassi anche i contenuti di https://arxiv.org/pdf/2602.03207 - è 
 ```text
 1,2,3 - prova con questo lavoro sui video e l ai - https://huggingface.co/papers/2512.08765
 ```
+
+### 2026-05-18T18:57:50.1388520+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+in generale wan-move e web-splat non sono lo stesso argomento e la comparativa non ha molto senso, diciamo che era un test
+```
