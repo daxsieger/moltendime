@@ -516,3 +516,15 @@ raccogli un po' pareri e post da ogni buon programmatore ai e crea per ciascuno 
 ```text
 vorrei creare una persona capace di imparare skill da altri progetti dato un repository github. Mi interessano 3 cose: 1 . apprendere in una persona dedicata skill, memoie e documenti tecnici già presenti nel repository di destinazione, 2. estrarre skill, memorie e documenti tecnici quando non presenti o insufficienti e 3. screare una skill da referenziare nel progetto esterno per caricare le skill, le memorie e i documenti tecnici in una persona di questo progetto. - come riferimento assumi che sia su un repository github che ora creeremo
 ```
+
+### 2026-05-18T12:40:34.9872090+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+fai 1,2,3 - usa https://github.com/daxsieger/visionary
+```

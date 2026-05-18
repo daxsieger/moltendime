@@ -9,5 +9,7 @@ alwaysApply: true
 - Prefer explicit source assets such as skills, rules, memories, runbooks, and technical docs.
 - If those assets are missing, infer a concise bundle from the codebase, scripts, and repository conventions.
 - Store local knowledge bundles under `.ai/repo-imports/<repo-slug>/`.
+- Use `./scripts/import-repo-knowledge.ps1 -RepoUrl <github-url>` to scaffold repeatable first-pass bundles.
 - Use `.github/skills/repo-knowledge-loader/templates/external-bridge-skill.md` as the reference bridge for external repositories.
+- When a bundle is already materialized, prefer `.ai/repo-imports/<repo-slug>/external-bridge-skill.md` as the concrete bridge asset.
 - Keep coverage aligned with Copilot and Claude Code and record support in `SUPPORTED.md`.

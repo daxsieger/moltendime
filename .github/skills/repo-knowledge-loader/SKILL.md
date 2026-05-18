@@ -36,6 +36,7 @@ If the target repository does not contain enough explicit AI assets:
 - Imported bundles: `.ai/repo-imports/<repo-slug>/`
 - Persona metadata: `.ai/personalities/repo-skill-learner.md`
 - External bridge template: `templates/external-bridge-skill.md`
+- Automation script: `scripts/import-repo-knowledge.ps1`
 
 ## Expected Bundle Contents
 
@@ -48,11 +49,23 @@ If the target repository does not contain enough explicit AI assets:
 
 After importing knowledge, create or refresh a bridge skill in the external repository using `templates/external-bridge-skill.md`.
 
+For a local generated bundle, you can also materialize a repo-specific bridge file at `.ai/repo-imports/<repo-slug>/external-bridge-skill.md`.
+
 That bridge skill should:
 
 - point to this repository as the canonical knowledge host
 - identify the target bundle under `.ai/repo-imports/<repo-slug>/`
 - instruct the external project to delegate learning work to `Repo Skill Learner`
+
+## Automation
+
+Use the shared automation script to scaffold a first-pass bundle from a GitHub repository URL:
+
+```powershell
+./scripts/import-repo-knowledge.ps1 -RepoUrl https://github.com/OWNER/REPO
+```
+
+The script creates `skills.md`, `memories.md`, `technical-docs.md`, `sources.md`, and `external-bridge-skill.md` under `.ai/repo-imports/<repo-slug>/`.
 
 ## Output Format
 
