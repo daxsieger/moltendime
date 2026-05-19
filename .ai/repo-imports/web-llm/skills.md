@@ -32,6 +32,17 @@
 - `01-browser-runtime-and-loading-skills.md`: browser-native runtime, model loading, and configuration boundaries
 - `02-openai-api-and-generation-control-skills.md`: OpenAI-compatible API, generation controls, JSON mode, and multimodal config
 - `03-worker-deployment-and-integration-skills.md`: worker isolation, deployment surfaces, extensions, and example-driven integration
+- `04-engine-pipeline-and-runtime-control-skills.md`: code-grounded engine lifecycle, prefill/decode flow, service-worker handling, and runtime telemetry
+
+## Family Placement
+
+- `web-llm` belongs to the browser-AI and WebGPU runtime family tracked in `../browser-ai-webgpu-family.md`.
+- This family groups browser-native inference, worker-hosted execution, and WebGPU-backed application runtimes without forcing them into the same application domain.
+
+## External Reuse Bridge
+
+- `external-bridge-skill.md` is the canonical bridge for external repositories that want to load and reuse the `web-llm` bundle.
+- External consumers should load the bundle and family note before synthesizing repository-specific browser-AI guidance.
 
 ## Inferred Reusable Skills
 

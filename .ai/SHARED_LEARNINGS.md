@@ -51,4 +51,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: For browser AI SDKs, extract configuration-boundary, API-compatibility, and worker-lifecycle skills separately instead of flattening them into one generic integration note.
 - why_it_matters: Keeps repository-owned guidance transferable across browser inference engines without losing the architectural role of typed runtime configuration.
 
+### 2026-05-19T00:30:00.0000000+02:00
+- personality: ai-rule-learner
+- learned_from: web-llm-runtime-architect
+- summary: Connect browser-native AI assets through family indexes when they share runtime constraints, but keep first-level skills owned by each dedicated persona.
+- why_it_matters: Preserves cross-repository discoverability without inventing false topic equivalence between adjacent browser-runtime systems.
+
 

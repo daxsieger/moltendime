@@ -636,3 +636,15 @@ in generale wan-move e web-splat non sono lo stesso argomento e la comparativa n
 ```text
 vorrei generare e importare skill da un nuovo repository: https://github.com/daxsieger/web-llm
 ```
+
+### 2026-05-19T08:10:03.1133760+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+ok fai 1,2,3
+```

@@ -11,6 +11,14 @@ WebLLM is a browser-native LLM runtime that exposes local model execution throug
 - `MLCEngineConfig` isolates engine bootstrap concerns such as app config, initialization progress callbacks, log level, and a logit processor registry.
 - `GenerationConfig` isolates request-scoped controls such as penalties, stop conditions, response formats, JSON mode, and optional latency breakdown.
 
+## Engine Pipeline
+
+- `src/engine.ts` treats model load as an explicit `reload()` phase and exposes `CreateMLCEngine()` as a convenience wrapper around that lifecycle.
+- Runtime execution is split into a prefill stage and repeated decode stages, and the engine exports telemetry for both phases.
+- `src/llm_chat.ts` resolves runtime ABI variants dynamically, choosing between single-step and batch prefill/decode kernel pairs.
+- Prompt and embedding paths are guarded by `prefillChunkSize`, making internal chunking limits part of the engine contract.
+- Some startup work is intentionally overlapped with prefill so the first visible token arrives sooner.
+
 ## Integration Model
 
 - The repository deliberately mirrors OpenAI-style chat APIs so existing application code can be reused against local models.
@@ -23,6 +31,17 @@ WebLLM is a browser-native LLM runtime that exposes local model execution throug
 - Web workers for UI-responsive inference
 - Service workers for lifecycle-managed browser tasks
 - Chrome extensions, including WebGPU service-worker variants
+
+## Lifecycle-Specific Runtime Layers
+
+- `src/service_worker.ts` does not treat service workers as a trivial alias of web workers; it introduces dedicated handler and engine types for browser background execution.
+- Keep-alive messaging is part of the service-worker strategy, which matters when inference sessions need to survive browser lifecycle churn.
+- The example set acts as the operational contract for abort/reload, cache reuse, worker orchestration, multi-model control, and runtime instrumentation.
+
+## Thematic Family Placement
+
+- WebLLM belongs to a browser-AI and WebGPU runtime family rather than a generic LLM-only bucket.
+- The relevant neighbors for future comparisons are browser-native inference SDKs, WebGPU application runtimes, extension-hosted AI systems, and adjacent local-model integration repositories.
 
 ## Design Implications For Skill Extraction
 

@@ -13,11 +13,14 @@
 - Monorepo/workspace: false
 - Repository AI asset count: 0
 - Workflow automation asset count: 5
-- First-level persona skill count: 15
+- First-level persona skill count: 25
 - Runtime posture: fully local browser inference with WebGPU acceleration and no required inference server
 - Public API posture: OpenAI-compatible chat surface over local open-source models
 - Config anchor files: `src/config.ts` and README-backed examples
 - Example coverage includes web workers, service workers, Chrome extensions, JSON mode, vision models, function calling, cache usage, multi-model workflows, and latency breakdown
+- Deep code anchors include `src/engine.ts`, `src/llm_chat.ts`, and `src/service_worker.ts`
+- Runtime execution model: explicit reload lifecycle, one prefill stage followed by repeated decode steps, and exported runtime telemetry
+- Thematic family: browser-AI and WebGPU runtimes
 - Imported repository skills belong operationally to the dedicated repository persona.
 - System archivists track imported skills and workflows for reuse and audit.
 - Bundle quality: mixed

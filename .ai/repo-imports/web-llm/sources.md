@@ -57,3 +57,31 @@
 - site/index.md
 - tests/scripts/sanity_checks/README.md
 - utils/vram_requirements/README.md
+
+## Deep Code Anchors
+
+- src/config.ts
+- src/engine.ts
+- src/llm_chat.ts
+- src/service_worker.ts
+- src/openai_api_protocols/chat_completion.ts
+- src/openai_api_protocols/completion.ts
+- src/openai_api_protocols/embedding.ts
+
+## Deep Example Anchors
+
+- examples/abort-reload/src/get_started.js
+- examples/cache-usage/src/cache_usage.ts
+- examples/get-started-web-worker/src/main.ts
+- examples/get-started-web-worker/src/worker.ts
+- examples/logit-processor/src/logit_processor.ts
+- examples/logit-processor/src/worker.ts
+- examples/multi-models/src/main.ts
+- examples/multi-models/src/worker.ts
+- examples/service-worker/src/main.ts
+- examples/service-worker/src/sw.ts
+
+## Family Linkage
+
+- thematic_family: ../browser-ai-webgpu-family.md
+- external_bridge: external-bridge-skill.md
