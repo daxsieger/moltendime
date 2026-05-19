@@ -1,0 +1,24 @@
+# web-llm Memory Notes
+
+- Repository URL: https://github.com/daxsieger/web-llm
+- Knowledge host repository: https://github.com/daxsieger/moltendime
+- Project type: TypeScript Node/Web application or library
+- Package name: @mlc-ai/web-llm
+- Package version at import time: 0.2.83
+- Development command: not detected
+- Build command: rollup -c && ./cleanup-index-js.sh
+- Test command: jest --coverage
+- Lint command: npx eslint ./src/ ./tests/ ./examples/ && npx prettier ./src/ ./tests/ ./examples/ --check
+- Stack tags: node, typescript
+- Monorepo/workspace: false
+- Repository AI asset count: 0
+- Workflow automation asset count: 5
+- First-level persona skill count: 15
+- Runtime posture: fully local browser inference with WebGPU acceleration and no required inference server
+- Public API posture: OpenAI-compatible chat surface over local open-source models
+- Config anchor files: `src/config.ts` and README-backed examples
+- Example coverage includes web workers, service workers, Chrome extensions, JSON mode, vision models, function calling, cache usage, multi-model workflows, and latency breakdown
+- Imported repository skills belong operationally to the dedicated repository persona.
+- System archivists track imported skills and workflows for reuse and audit.
+- Bundle quality: mixed
+- Dedicated owner persona: web-llm-runtime-architect

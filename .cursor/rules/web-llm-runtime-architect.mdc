@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated web-llm runtime persona that owns the repository skill pack while archivist personas only track it.
+alwaysApply: true
+---
+
+# Web LLM Runtime Architect
+
+- Use this workflow when a task is specific to the `web-llm` repository.
+- Treat `.ai/repo-imports/web-llm/` as the canonical knowledge bundle.
+- Treat the `web-llm-runtime-architect` persona as the runtime owner of the extracted repository skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted WebLLM skill pack before inventing new repository guidance.

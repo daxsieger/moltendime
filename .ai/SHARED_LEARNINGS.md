@@ -45,4 +45,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: Separate method-design skills, benchmark-design skills, and failure-analysis skills when importing controllable-generation papers.
 - why_it_matters: Prevents benchmark and stress-test insights from being lost inside a pure method summary.
 
+### 2026-05-19T00:00:00.0000000+02:00
+- personality: web-llm-runtime-architect
+- learned_from: repo-skill-learner
+- summary: For browser AI SDKs, extract configuration-boundary, API-compatibility, and worker-lifecycle skills separately instead of flattening them into one generic integration note.
+- why_it_matters: Keeps repository-owned guidance transferable across browser inference engines without losing the architectural role of typed runtime configuration.
+
 
