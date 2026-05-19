@@ -1,0 +1,29 @@
+# matrix-game Memory Notes
+
+- Repository URL: https://github.com/daxsieger/Matrix-Game
+- Knowledge host repository: https://github.com/daxsieger/moltendime
+- Project type: repository with no recognized primary build stack
+- Package name: not detected
+- Development command: not detected
+- Build command: not detected
+- Stack tags: none
+- Monorepo/workspace: false
+- Repository AI asset count: 0
+- Workflow automation asset count: 0
+- First-level persona skill count: 100
+- Dedicated owner persona: matrix-game-world-model-architect
+- Repository structure is versioned into Matrix-Game-1, Matrix-Game-2, and Matrix-Game-3
+- Matrix-Game-1 is presented as a 17B interactive world foundation model for controllable Minecraft world generation
+- Matrix-Game-1 ships with GameWorld Score and a Matrix-Game dataset story
+- Matrix-Game-2 is presented as a real-time long-video interactive world model with universal, GTA-driving, and TempleRun scene modes
+- Matrix-Game-2 links Matrix-3D as the adjacent project for explorable large-scale 3D scenes
+- Matrix-Game-3 is presented as a real-time and streaming interactive world model with long-horizon memory
+- Matrix-Game-3 supports interactive generation in first-person unreal scenes and exposes distributed runtime controls
+- Explicit lineage named in the repository includes Diffusers, HunyuanVideo, Open-Sora-Plan, SkyReels-V2, Self-Forcing, Wan2.2, lingbot-world, and LightX2V
+- World-data and action-understanding lineage explicitly includes MineDojo, MineRL, Video-Pre-Training, and GameFactory
+- Oasis and MineWorld appear as benchmark-adjacent peers, not as explicit code ancestors
+- The repository clearly belongs to interactive world generation; classic procedural-terrain lineage is adjacent rather than explicitly claimed
+- Imported repository skills belong operationally to the dedicated repository persona.
+- System archivists track imported skills and workflows for reuse and audit.
+- Bundle quality: inferred
+- Import priority for adjacent projects starts with Matrix-3D, GameFactory, Wan2.2, HunyuanVideo, SkyReels-V2, Open-Sora-Plan, MineDojo, MineRL, and Video-Pre-Training.

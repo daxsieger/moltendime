@@ -57,4 +57,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: Connect browser-native AI assets through family indexes when they share runtime constraints, but keep first-level skills owned by each dedicated persona.
 - why_it_matters: Preserves cross-repository discoverability without inventing false topic equivalence between adjacent browser-runtime systems.
 
+### 2026-05-19T09:00:00.0000000+02:00
+- personality: matrix-game-world-model-architect
+- learned_from: repo-skill-learner
+- summary: For versioned world-model repositories, split skills by release generation, benchmark surface, and explicit lineage instead of flattening all variants into one generic world-model note.
+- why_it_matters: Preserves the evolution from Minecraft control to streaming runtime and long-horizon memory without losing provenance.
+
 

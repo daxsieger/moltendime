@@ -648,3 +648,15 @@ vorrei generare e importare skill da un nuovo repository: https://github.com/dax
 ```text
 ok fai 1,2,3
 ```
+
+### 2026-05-19T18:41:14.6027770+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+molto bene ora crea una persona e un set di almeno 100 skill per le tre versioni del progetto matrix-game che trovi nel repo https://github.com/daxsieger/Matrix-Game  - cerca di risalirre anche ai progetti da cui è sttao ispirato e derivato a livello di generazione di mondi e terreni procedurali e poi proponi una lista di progetti che potremmo importare
+```

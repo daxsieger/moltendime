@@ -24,6 +24,7 @@ This repository standardizes AI customizations across these agent engines:
 - Repo Knowledge Loader skill: Copilot, Claude Code, Cursor
 - Web Splat Optimizer persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Web LLM Runtime Architect persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
+- Matrix Game World Model Architect persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Paper Skill Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Paper Knowledge Loader skill: Copilot, Claude Code, Cursor
 - WebSplatter Paper Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent

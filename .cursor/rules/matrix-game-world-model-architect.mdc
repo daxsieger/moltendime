@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated Matrix-Game world-model persona that owns the repository skill pack while archivist personas only track it.
+alwaysApply: true
+---
+
+# Matrix Game World Model Architect
+
+- Use this workflow when a task is specific to the `Matrix-Game` repository.
+- Treat `.ai/repo-imports/matrix-game/` as the canonical knowledge bundle.
+- Treat the `matrix-game-world-model-architect` persona as the runtime owner of the extracted repository skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted 100-skill Matrix-Game pack before inventing new repository guidance.
