@@ -63,4 +63,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: For versioned world-model repositories, split skills by release generation, benchmark surface, and explicit lineage instead of flattening all variants into one generic world-model note.
 - why_it_matters: Preserves the evolution from Minecraft control to streaming runtime and long-horizon memory without losing provenance.
 
+### 2026-05-19T10:00:00.0000000+02:00
+- personality: ai-rule-learner
+- learned_from: matrix-game-world-model-architect
+- summary: Use a family note to group interactive world-model repos by runtime and control semantics, while keeping sibling scene-generation repos distinct from gameplay-centric peers.
+- why_it_matters: This keeps Matrix-Game, Matrix-3D, Oasis, and MineWorld discoverable together without flattening their different problem surfaces.
+
 

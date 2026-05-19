@@ -1,0 +1,23 @@
+# matrix-3d Memory Notes
+
+- Repository URL: https://github.com/SkyworkAI/Matrix-3D
+- Knowledge host repository: https://github.com/daxsieger/moltendime
+- Project type: repository with no recognized primary build stack
+- Package name: not detected
+- Development command: not detected
+- Build command: not detected
+- Stack tags: none
+- Monorepo/workspace: false
+- Repository AI asset count: 0
+- Workflow automation asset count: 0
+- First-level persona skill count: 15
+- Dedicated owner persona: matrix-3d-scene-architect
+- Matrix-3D is framed as omnidirectional explorable 3D world generation based on panoramic representation
+- Core pipeline combines conditional video generation with panoramic 3D reconstruction
+- Input modes include both image-to-scene and text-to-scene generation
+- Runtime posture includes low-VRAM operation modes down to 12G for one 5B model variant
+- Related project linkage points back to Matrix-Game-2.0 for real-time long-sequence interactive world models
+- Imported repository skills belong operationally to the dedicated repository persona.
+- System archivists track imported skills and workflows for reuse and audit.
+- Bundle quality: inferred
+- Family placement: interactive-world-models

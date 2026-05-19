@@ -660,3 +660,15 @@ ok fai 1,2,3
 ```text
 molto bene ora crea una persona e un set di almeno 100 skill per le tre versioni del progetto matrix-game che trovi nel repo https://github.com/daxsieger/Matrix-Game  - cerca di risalirre anche ai progetti da cui è sttao ispirato e derivato a livello di generazione di mondi e terreni procedurali e poi proponi una lista di progetti che potremmo importare
 ```
+
+### 2026-05-19T19:52:33.6702980+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+fai pure 1,2,3
+```

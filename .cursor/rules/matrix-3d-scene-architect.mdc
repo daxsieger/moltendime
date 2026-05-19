@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated Matrix-3D scene persona that owns the repository skill pack while archivists only track it.
+alwaysApply: true
+---
+
+# Matrix 3D Scene Architect
+
+- Use this workflow when a task is specific to the `Matrix-3D` repository.
+- Treat `.ai/repo-imports/matrix-3d/` as the canonical knowledge bundle.
+- Treat the `matrix-3d-scene-architect` persona as the runtime owner of the extracted repository skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted Matrix-3D skill pack before inventing new repository guidance.

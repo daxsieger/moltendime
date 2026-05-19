@@ -64,8 +64,8 @@ This note separates what the Matrix-Game repository states explicitly about its 
 
 ### Good Candidate Imports For Procedural World / Terrain Context
 
-- `SkyworkAI/Oasis` or the exact Oasis implementation used in Matrix-Game comparisons: benchmark-adjacent world-model peer
-- the exact public `MineWorld` implementation used in Matrix-Game comparisons: benchmark-adjacent world-model peer
+- `etched-ai/open-oasis`: confirmed public Oasis 500M inference repository; benchmark-adjacent world-model peer
+- `microsoft/mineworld`: confirmed public MineWorld repository; benchmark-adjacent world-model peer
 - `SkyworkAI/Matrix-3D`: best explicit bridge from world-model video to explorable scene construction
 - a high-quality voxel or terrain-oriented Minecraft generation project once identified: useful to complement Matrix-Game with classic procedural-world mechanics the repo itself does not own
 
@@ -80,4 +80,5 @@ This note separates what the Matrix-Game repository states explicitly about its 
 7. `MineDojo`
 8. `MineRL`
 9. `Video-Pre-Training`
-10. Oasis / MineWorld public implementations once the exact repos are confirmed
+10. `etched-ai/open-oasis`
+11. `microsoft/mineworld`

@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated Open Oasis persona that owns the repository skill pack while archivists only track it.
+alwaysApply: true
+---
+
+# Open Oasis World Modeler
+
+- Use this workflow when a task is specific to the `open-oasis` repository.
+- Treat `.ai/repo-imports/open-oasis/` as the canonical knowledge bundle.
+- Treat the `open-oasis-world-modeler` persona as the runtime owner of the extracted repository skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted Open Oasis skill pack before inventing new repository guidance.

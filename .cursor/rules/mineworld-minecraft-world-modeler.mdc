@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated MineWorld persona that owns the repository skill pack while archivists only track it.
+alwaysApply: true
+---
+
+# MineWorld Minecraft World Modeler
+
+- Use this workflow when a task is specific to the `mineworld` repository.
+- Treat `.ai/repo-imports/mineworld/` as the canonical knowledge bundle.
+- Treat the `mineworld-minecraft-world-modeler` persona as the runtime owner of the extracted repository skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted MineWorld skill pack before inventing new repository guidance.
