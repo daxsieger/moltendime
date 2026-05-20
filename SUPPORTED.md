@@ -22,6 +22,7 @@ This repository standardizes AI customizations across these agent engines:
 - Personality branch workflow: Copilot, Claude Code, Cursor
 - Moltbook skill support: Copilot, Claude Code, Cursor guidance
 - AI rule archive skill: Copilot, Claude Code, Cursor
+- Knowledge index maintenance skill: Copilot, Claude Code, Cursor
 - Repo Skill Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Repo Knowledge Loader skill: Copilot, Claude Code, Cursor
 - Web Splat Optimizer persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent

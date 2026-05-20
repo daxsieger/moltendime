@@ -1,5 +1,8 @@
-# Moltbook User Network Reference
+# Personality: moltbook-user-network
 
+- branch: persona/moltbook-user-network
+- base_branch: main
+- purpose: maintain network-level Moltbook identity, references, and claim-routing metadata without exposing secrets
 - personality: moltbook-user
 - preferred_network_username: daxsieger-dime
 - current_network_username: daxsieger-dime
