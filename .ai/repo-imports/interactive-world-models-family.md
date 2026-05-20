@@ -25,6 +25,7 @@ Members may differ in environment, representation, and decoding strategy, but th
 
 - `open-oasis`: public Oasis 500M inference release for action-conditional gameplay generation
 - `mineworld`: Minecraft autoregressive world model with diagonal decoding and explicit action-following evaluation
+- `gamefactory`: generative interactive video framework for creating new games with decoupled action control
 
 ### Upstream Generative Backbone Peers
 
@@ -34,12 +35,14 @@ Members may differ in environment, representation, and decoding strategy, but th
 
 - `matrix-game` and `mineworld` are the closest peers on Minecraft-like interactive world modeling.
 - `matrix-game` and `open-oasis` are close on action-conditioned gameplay rollout, but `open-oasis` is a smaller public inference slice.
+- `gamefactory` is an alternative and complementary peer to `matrix-game`: both care about controllability, but `gamefactory` leans harder into scene generalization and new-game creation.
 - `matrix-3d` is adjacent by world-generation ambition, but its center of gravity is explorable panoramic 3D scene creation rather than keyboard-driven game rollout.
 - `wan-2-2` is farther from direct gameplay interaction, but it is a strong upstream backbone peer for systems that inherit Wan-style video priors or deployment patterns.
 
 ## Reuse Rules
 
 - Reuse action-conditioning, benchmark, and runtime-decoding techniques across `matrix-game`, `mineworld`, and `open-oasis` when the destination repository is interactive and control-sensitive.
+- Reuse decoupled action-control and scene-generalization techniques from `gamefactory` when the destination repository aims to create or generalize new game worlds rather than only continue one established environment.
 - Reuse explorable-scene and scene-reconstruction techniques from `matrix-3d` when the destination repository targets free-view exploration or scene materialization.
 - Reuse prompt extension, multimodal task packaging, and distributed inference patterns from `wan-2-2` when the destination repository needs a stronger Wan-based generation substrate.
 - Keep first-level skills with their dedicated personas; this family note is only an archivist index and routing aid.
@@ -49,8 +52,8 @@ Members may differ in environment, representation, and decoding strategy, but th
 1. `matrix-3d`
 2. `open-oasis`
 3. `mineworld`
-4. `wan-2-2`
-5. `GameFactory` once the exact public repository is confirmed
+4. `gamefactory`
+5. `wan-2-2`
 6. `HunyuanVideo`
 7. `SkyReels-V2`
 

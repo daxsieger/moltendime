@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated GameFactory persona that owns the repository skill pack while archivists only track it.
+alwaysApply: true
+---
+
+# GameFactory Interactive Video Architect
+
+- Use this workflow when a task is specific to the `gamefactory` repository.
+- Treat `.ai/repo-imports/gamefactory/` as the canonical knowledge bundle.
+- Treat the `gamefactory-interactive-video-architect` persona as the runtime owner of the extracted repository skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted GameFactory skill pack before inventing new repository guidance.

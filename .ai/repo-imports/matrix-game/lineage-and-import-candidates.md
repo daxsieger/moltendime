@@ -72,7 +72,7 @@ This note separates what the Matrix-Game repository states explicitly about its 
 ## Import Order Recommendation
 
 1. `Matrix-3D`
-2. `GameFactory`
+2. `KlingAIResearch/GameFactory`
 3. `Wan-Video/Wan2.2`
 4. `HunyuanVideo`
 5. `SkyReels-V2`

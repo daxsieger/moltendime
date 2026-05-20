@@ -10,13 +10,14 @@
 - Monorepo/workspace: false
 - Repository AI asset count: 0
 - Workflow automation asset count: 0
-- First-level persona skill count: 10
+- First-level persona skill count: 15
 - Dedicated owner persona: open-oasis-world-modeler
-- Code-grounded anchors: generate.py, utils.py, dit.py
+- Code-grounded anchors: generate.py, utils.py, dit.py, attention.py, vae.py
 - Prompt loader accepts image or video inputs and normalizes both to a fixed 360x640 batched temporal tensor shape
 - Action loader supports raw action dictionaries or precomputed one-hot tensors and prepends an initial no-op step
 - Public runtime supports both .pt and .safetensors checkpoints for DiT and VAE paths
 - Latent rollout uses stabilized context frames and a sliding active window capped by model.max_frames
+- Backbone splits temporal and spatial axial attention and uses a patchified VAE with an explicit diagonal Gaussian latent interface
 - Imported repository skills belong operationally to the dedicated repository persona.
 - System archivists track imported skills and workflows for reuse and audit.
 - Bundle quality: inferred

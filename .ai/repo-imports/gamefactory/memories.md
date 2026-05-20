@@ -1,0 +1,22 @@
+# gamefactory Memory Notes
+
+- Repository URL: https://github.com/KlingAIResearch/GameFactory
+- Knowledge host repository: https://github.com/daxsieger/moltendime
+- Project type: repository with no recognized primary build stack
+- Package name: not detected
+- Development command: not detected
+- Build command: not detected
+- Stack tags: none
+- Monorepo/workspace: false
+- Repository AI asset count: 0
+- Workflow automation asset count: 0
+- First-level persona skill count: 5
+- Dedicated owner persona: gamefactory-interactive-video-architect
+- GameFactory is a public repo at KlingAIResearch/GameFactory
+- Core framing is generative interactive video for creating new games with scene generalization
+- Action control is explicitly decoupled from open-domain video priors through a multi-phase strategy
+- GF-Minecraft dataset is the main control-learning substrate with biome, weather, time-of-day, metadata, and action annotations
+- Imported repository skills belong operationally to the dedicated repository persona.
+- System archivists track imported skills and workflows for reuse and audit.
+- Bundle quality: inferred
+- Family placement: interactive-world-models

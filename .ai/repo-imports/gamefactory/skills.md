@@ -1,9 +1,9 @@
-# Bundle: open-oasis
+# Bundle: gamefactory
 
-- source_repo: https://github.com/etched-ai/open-oasis
+- source_repo: https://github.com/KlingAIResearch/GameFactory
 - knowledge_host_repo: https://github.com/daxsieger/moltendime
 - bundle_type: inferred
-- generated_for_persona: open-oasis-world-modeler
+- generated_for_persona: gamefactory-interactive-video-architect
 - tracked_by_persona: ai-rule-learner
 
 ## Imported Repository AI Assets
@@ -18,26 +18,19 @@
 
 - The dedicated repository persona is the receptacle for imported repository skills.
 - System personas such as `ai-rule-learner` should index and track these skills, not replace the repository persona as their runtime owner.
-- The `open-oasis-world-modeler` persona owns the first-level action-conditional inference skills extracted from the public Oasis 500M repository.
+- The `gamefactory-interactive-video-architect` persona owns the first-level interactive-video and game-creation skills extracted from GameFactory.
 
-- No explicit repository skill files were found, so the repository persona relies on inferred first-level skills extracted from the public README and inference surface.
+- No explicit repository skill files were found, so the repository persona relies on inferred first-level skills extracted from the public README and dataset framing.
 
 ## Extracted Skill Pack
 
-- `skills-index.md`: top-level index for the extracted Open Oasis skill set
-- `01-open-oasis-core-skills.md`: public 500M inference, action conditioning, and prompt-frame generation
-- `02-open-oasis-code-path-skills.md`: checkpoint loading, latent rollout, prompt normalization, and action tensor shaping extracted from code
-- `03-open-oasis-backbone-skills.md`: axial attention and VAE design extracted from `attention.py` and `vae.py`
+- `skills-index.md`: top-level index for the extracted GameFactory skill set
+- `01-gamefactory-core-skills.md`: generative interactive videos, decoupled action control, and GF-Minecraft dataset design
 
 ## Family Placement
 
-- `open-oasis` belongs to the interactive-world-models family tracked in `../interactive-world-models-family.md`.
-- Within that family, it is the lightweight public inference release for Oasis rather than a full large repository stack.
-
-## Code-Grounded Extraction Surface
-
-- Primary code anchors: `generate.py`, `utils.py`, `dit.py`, `attention.py`, and `vae.py`
-- These files control checkpoint loading, prompt and action normalization, the latent diffusion-forcing rollout, the axial attention stack, and the VAE-side latent interface.
+- `gamefactory` belongs to the interactive-world-models family tracked in `../interactive-world-models-family.md`.
+- Within that family, it is an alternative and complementary peer focused on creating new games from generative interactive video rather than only extending one existing game environment.
 
 ## Inferred Reusable Skills
 

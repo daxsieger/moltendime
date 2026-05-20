@@ -26,11 +26,17 @@
 
 - `skills-index.md`: top-level index for the extracted Wan2.2 skill set
 - `01-wan-2-2-core-skills.md`: MoE video generation, multimodal task coverage, and deployment posture
+- `02-wan-2-2-code-path-skills.md`: argument validation, prompt expansion, model sharding, and TI2V runtime extracted from code
 
 ## Family Placement
 
 - `wan-2-2` belongs to the interactive-world-models family tracked in `../interactive-world-models-family.md`.
 - Within that family, it is an upstream generative backbone peer rather than a direct gameplay-world-model benchmark.
+
+## Code-Grounded Extraction Surface
+
+- Primary code anchors: `generate.py` and `wan/textimage2video.py`
+- These files control task validation, prompt extension, model placement, distributed strategy, and TI2V generation runtime.
 
 ## Inferred Reusable Skills
 

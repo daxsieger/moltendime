@@ -11,10 +11,19 @@ Wan2.2 is a large-scale multimodal video-generation repository that sits upstrea
 - Unified task family spanning T2V, I2V, TI2V, S2V, and animation
 - Explicit single-GPU and distributed inference posture
 
+## Code-Grounded Runtime Surface
+
+- `generate.py` is the controlling CLI surface for all public tasks.
+- The repo centralizes per-task validation, default prompt selection, sampling defaults, and supported-size checks before model initialization.
+- Prompt extension is wired into the same runtime surface through either DashScope or local Qwen models.
+- `wan/textimage2video.py` shows how Wan2.2 actually composes TI2V from T5, Wan2.2-VAE, and WanModel, then applies FSDP or sequence-parallel adaptations.
+- The code also makes device placement and dtype conversion explicit policy choices rather than incidental details.
+
 ## Family Relevance
 
 - Wan2.2 is not a gameplay-world-model repo in the way MineWorld or Open Oasis are.
 - It still belongs in the family because it is a likely upstream substrate for controllable world-generation systems that need stronger video priors, prompt extension, or distributed inference patterns.
+- The code confirms that this relevance is operational, not only conceptual: the repo exposes reusable strategies for task multiplexing, prompt expansion, and distributed model execution.
 
 ## README Preview
 

@@ -75,4 +75,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: Public world-model repos that look lightweight at README level often still hide reusable runtime structure in prompt loaders, action normalization, and rollout-window logic.
 - why_it_matters: Code-grounded extraction produces better reusable skills than README-only summaries for inference-oriented repos like Open Oasis and MineWorld.
 
+### 2026-05-20T07:45:00.0000000+02:00
+- personality: ai-rule-learner
+- learned_from: gamefactory-interactive-video-architect
+- summary: Interactive world-model families need room for both continuation peers and creation peers; GameFactory belongs as a complementary creation-oriented peer rather than being forced into the same slot as MineWorld or Oasis.
+- why_it_matters: This preserves the distinction between action-controllable continuation and new-game scene generalization.
+
 

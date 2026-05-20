@@ -19,6 +19,13 @@ Open Oasis is a narrow public inference repository for Oasis 500M. It is not the
 - Action inputs are normalized through `utils.py` into a one-hot stream with an added initial no-op frame.
 - The rollout uses a diffusion-forcing style loop that appends one latent frame at a time, stabilizes prior context frames, and crops the active context to the transformer's maximum frame window.
 
+## Backbone Notes
+
+- `attention.py` decomposes the backbone into temporal axial attention and spatial axial attention rather than one flat spatiotemporal block.
+- Temporal attention is causal and uses rotary treatment for the time axis, while spatial attention applies axial rotary frequencies over the pixel grid.
+- `vae.py` exposes a patchified transformer-style autoencoder with an explicit diagonal Gaussian latent interface.
+- This means Open Oasis is not only a thin runtime wrapper; it also contains reusable backbone design choices for video attention and transformer-native VAE design.
+
 ## Architectural Notes
 
 - `dit.py` exposes the timestep-conditioning and patch-embedding surface rather than a large application shell.

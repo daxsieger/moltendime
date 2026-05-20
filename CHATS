@@ -698,3 +698,17 @@ fai portare open-oasis da persona leggera a bundle più profondo con skill estra
 fare lo stesso per mineworld, includendo file chiave come diagonal_decoding.py e mineworld.py
 aggiungere il prossimo peer della family interactive world models, partendo da GameFactory o Wan2.2
 ```
+
+### 2026-05-20T07:39:54.2744720+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+approfondire wan-2-2 dal codice reale, non solo dal README, come hai appena fatto per open-oasis e mineworld
+cercare in modo mirato il repo pubblico esatto di GameFactory e aggiungerlo come peer alternativo o complementare
+rifinire open-oasis ancora di più leggendo anche attention.py e vae.py per estrarre skill sul backbone, non solo sul runtime
+```
