@@ -26,11 +26,19 @@ Wan2.2 is a large-scale multimodal video-generation repository that sits upstrea
 - The same module uses six-way timestep modulation inside each attention block, so conditioning reaches self-attention, cross-attention, and FFN residual paths directly.
 - `wan/modules/vae2_2.py` reveals a causal 3D VAE with temporal cache reuse during upsampling, downsampling, and residual processing, which matters for chunked video serving.
 
+## Task-Specialized Subfamilies
+
+- `wan/modules/t5.py` is a local text stack rather than a thin wrapper, with relative-position bias, gated FFN blocks, and explicit fp16-clamp protection.
+- `wan/modules/animate/model_animate.py` and `wan/modules/animate/motion_encoder.py` show how Wan extends the core backbone for identity, pose, and face-motion conditioning without replacing the whole transformer family.
+- `wan/modules/s2v/model_s2v.py` and `wan/modules/s2v/audio_encoder.py` show a different specialization path built around audio alignment, segment-aware modulation, and audio feature injection.
+- See `task-subfamilies.md` when you need to distinguish reusable core backbone patterns from animate- and speech-specific branches.
+
 ## Family Relevance
 
 - Wan2.2 is not a gameplay-world-model repo in the way MineWorld or Open Oasis are.
 - It still belongs in the family because it is a likely upstream substrate for controllable world-generation systems that need stronger video priors, prompt extension, or distributed inference patterns.
 - The code confirms that this relevance is operational, not only conceptual: the repo exposes reusable strategies for task multiplexing, prompt expansion, distributed model execution, and the internal design of a deployable video backbone.
+- The specialized branches also matter: they show how Wan turns one shared backbone into multiple conditioning families without flattening all tasks into the same control interface.
 
 ## README Preview
 

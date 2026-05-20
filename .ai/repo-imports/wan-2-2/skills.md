@@ -28,6 +28,7 @@
 - `01-wan-2-2-core-skills.md`: MoE video generation, multimodal task coverage, and deployment posture
 - `02-wan-2-2-code-path-skills.md`: argument validation, prompt expansion, model sharding, and TI2V runtime extracted from code
 - `03-wan-2-2-backbone-skills.md`: backbone attention, rotary geometry, modulation, and VAE design extracted from `wan/modules`
+- `04-wan-2-2-task-specialized-skills.md`: text stack, animate branch, and speech-to-video branch patterns extracted from `wan/modules`
 
 ## Family Placement
 
@@ -40,6 +41,8 @@
 - These files control task validation, prompt extension, model placement, distributed strategy, and TI2V generation runtime.
 - Backbone anchors: `wan/modules/attention.py`, `wan/modules/model.py`, and `wan/modules/vae2_2.py`
 - These modules control the internal attention fallback tree, 3-axis rotary structure, transformer modulation, patchified video backbone, and causal VAE design.
+- Task-specialized anchors: `wan/modules/t5.py`, `wan/modules/animate/*`, and `wan/modules/s2v/*`
+- These modules separate reusable text conditioning from task-specific animation and speech-driven branches.
 
 ## Inferred Reusable Skills
 

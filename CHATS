@@ -726,3 +726,16 @@ approfondire gamefactory leggendo detection.py e visualize.py per estrarre skill
 leggere moduli più profondi di wan-2-2 sotto wan/modules per passare da skill code-grounded di orchestration a skill sul backbone vero e proprio
 costruire una nota comparativa interna tra matrix-game, mineworld, open-oasis e gamefactory che distingua chiaramente continuation, benchmark e creation peers
 ```
+
+### 2026-05-20T07:49:48.5139810+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+approfondire gamefactory ancora di più se vuoi trasformare le skill operative in una mini guida di preprocessing dataset passo-passo
+scavare altri moduli wan/modules come t5.py o i rami animate e s2v se vuoi separare backbone core da task-specialized subfamilies
+```

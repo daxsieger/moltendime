@@ -23,6 +23,11 @@ GameFactory is an interactive-video framework for creating new games with genera
 - GameFactory currently exposes more operational value in dataset/action-processing and audit tooling than in public model-training code.
 - The reusable insight is not only conceptual decoupling; it is also that action quality can be improved with deterministic metadata post-processing and direct visual playback of controls.
 
+## Preprocessing Guide
+
+- See `preprocessing-guide.md` for the step-by-step path from raw `video/` plus `metadata/` into `metadata-detection/` and visual input overlays.
+- This is the most concrete public workflow currently exposed by the repository.
+
 ## Family Relevance
 
 - GameFactory is closer to `matrix-game` and `open-oasis` than to `wan-2-2` because it treats action-controllable video as a world-model-like interaction problem.

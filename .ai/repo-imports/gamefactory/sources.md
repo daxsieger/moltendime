@@ -22,3 +22,7 @@
 
 - detection.py
 - visualize.py
+
+## Derived Bundle Notes
+
+- preprocessing-guide.md

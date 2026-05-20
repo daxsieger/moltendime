@@ -32,3 +32,12 @@
 - wan/modules/attention.py
 - wan/modules/model.py
 - wan/modules/vae2_2.py
+- wan/modules/t5.py
+- wan/modules/animate/model_animate.py
+- wan/modules/animate/motion_encoder.py
+- wan/modules/s2v/model_s2v.py
+- wan/modules/s2v/audio_encoder.py
+
+## Derived Bundle Notes
+
+- task-subfamilies.md
