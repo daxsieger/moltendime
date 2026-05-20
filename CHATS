@@ -739,3 +739,15 @@ costruire una nota comparativa interna tra matrix-game, mineworld, open-oasis e 
 approfondire gamefactory ancora di più se vuoi trasformare le skill operative in una mini guida di preprocessing dataset passo-passo
 scavare altri moduli wan/modules come t5.py o i rami animate e s2v se vuoi separare backbone core da task-specialized subfamilies
 ```
+
+### 2026-05-20T07:51:26.0771880+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+stai rispettando la divisione delle personas fra branch diversi?
+```
