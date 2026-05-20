@@ -10,4 +10,5 @@ alwaysApply: true
 - After a prompt changes the workspace, run `./scripts/commit-prompt-state.ps1`.
 - Give each personality its own `persona/<slug>` branch.
 - Keep `.ai/SHARED_LEARNINGS.md` updated and present across personality branches.
+- Use `./scripts/sync-personality-branches.ps1` when `main` and `persona/*` branches need one batch GitHub sync.
 - Keep Copilot, Claude Code, and Cursor customizations aligned and listed in `SUPPORTED.md`.

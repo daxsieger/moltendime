@@ -1,0 +1,12 @@
+---
+description: Cursor equivalent for batch GitHub synchronization of main and persona branches.
+alwaysApply: true
+---
+
+# GitHub Branch Sync Skill Equivalent
+
+- Use `./scripts/sync-personality-branches.ps1` when `main` and `persona/*` branches need one batch push or pull against GitHub.
+- Start with `-DryRun` when you want to inspect the sync plan first.
+- Use `-Mode push` to publish local personality branches.
+- Use `-Mode pull` to fetch and fast-forward local branches from GitHub.
+- Treat pull failures as branch-state problems to resolve explicitly; do not replace `ff-only` sync with implicit merges.

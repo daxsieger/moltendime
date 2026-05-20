@@ -763,3 +763,15 @@ stai rispettando la divisione delle personas fra branch diversi?
 ```text
 ok rimettiamoci in sesto allora: crea le personas come branch separati allora e suddividi secondo le regole note in bransh distinti la tua conoscenza
 ```
+
+### 2026-05-20T07:57:04.6142480+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+ok ora crea uno script/skill per pushare/pullare tutti  branch da github
+```

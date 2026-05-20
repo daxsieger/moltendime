@@ -28,6 +28,7 @@ Use this skill to manage repository lifecycle and the prompt-based commit policy
 - Keep shared cross-personality learnings in `.ai/SHARED_LEARNINGS.md`.
 - Use `./scripts/create-personality-branch.ps1` to bootstrap personality branches.
 - Use `./scripts/record-personality-learning.ps1` to append new learnings.
+- Use `./scripts/sync-personality-branches.ps1` when `main` and `persona/*` branches need one batch push/pull against GitHub.
 
 ## Workflow
 
@@ -60,4 +61,10 @@ Use this skill to manage repository lifecycle and the prompt-based commit policy
 
 ```powershell
 ./scripts/sync-shared-learnings.ps1 -SourceBranch main
+```
+
+### Push or pull all personality branches with GitHub
+
+```powershell
+./scripts/sync-personality-branches.ps1 -Mode both -Remote origin -Prune -DryRun
 ```
