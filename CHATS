@@ -813,3 +813,15 @@ ok sicnronizzza tutte le personas e crea i branch mancanti su github usando la s
 ```text
 bene organizza ora i tuoi indici, metti un readme con le personas di sistema (non gli eseperti, am quelle strutturali come l'archivista) e dotati di skill per ordinare e indicizzare il tutto - vorrei che ofsse chiaro chi conosce l'indice di tutta la conoscenza e che ci fosse una procedura per aggiornare questo indice
 ```
+
+### 2026-05-20T08:43:30.0000000+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: manual backfill
+- backfilled: true
+
+```text
+ckmmittta e pusha tutte le persona
+```
