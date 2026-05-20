@@ -10,8 +10,14 @@
 - Monorepo/workspace: false
 - Repository AI asset count: 0
 - Workflow automation asset count: 0
-- First-level persona skill count: 0
+- First-level persona skill count: 10
+- Dedicated owner persona: mineworld-minecraft-world-modeler
+- Code-grounded anchors: mineworld.py, diagonal_decoding.py, inference.py, lvm.py
+- Interactive demo converts UI actions plus camera deltas into action-vocabulary indices before generation
+- Runtime trims old context, refreshes KV cache, and re-prefills when the context window is exceeded
+- Diagonal decoding reinserts action tokens at structured pixel-token boundaries using pixnum and actnum parameters
+- Evaluation runtime keeps naive and image_diagd as interchangeable backends and reports both token/sec and fps
 - Imported repository skills belong operationally to the dedicated repository persona.
 - System archivists track imported skills and workflows for reuse and audit.
 - Bundle quality: inferred
-- This memory file is generated from repository metadata and documentation previews.
+- Family placement: interactive-world-models

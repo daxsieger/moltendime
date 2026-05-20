@@ -26,11 +26,17 @@
 
 - `skills-index.md`: top-level index for the extracted Open Oasis skill set
 - `01-open-oasis-core-skills.md`: public 500M inference, action conditioning, and prompt-frame generation
+- `02-open-oasis-code-path-skills.md`: checkpoint loading, latent rollout, prompt normalization, and action tensor shaping extracted from code
 
 ## Family Placement
 
 - `open-oasis` belongs to the interactive-world-models family tracked in `../interactive-world-models-family.md`.
 - Within that family, it is the lightweight public inference release for Oasis rather than a full large repository stack.
+
+## Code-Grounded Extraction Surface
+
+- Primary code anchors: `generate.py`, `utils.py`, and `dit.py`
+- These files control checkpoint loading, prompt and action normalization, the latent diffusion-forcing rollout, and the transformer-side timestep conditioning surface.
 
 ## Inferred Reusable Skills
 

@@ -69,4 +69,10 @@ Cross-personality learning history lives here and must be present in every `pers
 - summary: Use a family note to group interactive world-model repos by runtime and control semantics, while keeping sibling scene-generation repos distinct from gameplay-centric peers.
 - why_it_matters: This keeps Matrix-Game, Matrix-3D, Oasis, and MineWorld discoverable together without flattening their different problem surfaces.
 
+### 2026-05-20T07:30:00.0000000+02:00
+- personality: ai-rule-learner
+- learned_from: open-oasis-world-modeler
+- summary: Public world-model repos that look lightweight at README level often still hide reusable runtime structure in prompt loaders, action normalization, and rollout-window logic.
+- why_it_matters: Code-grounded extraction produces better reusable skills than README-only summaries for inference-oriented repos like Open Oasis and MineWorld.
+
 

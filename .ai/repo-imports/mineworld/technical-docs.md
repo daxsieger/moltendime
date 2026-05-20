@@ -11,6 +11,19 @@ MineWorld is a real-time interactive world model on Minecraft built around a vis
 - Public split between web demo interaction and local evaluation reproduction
 - Scripted metrics workflow after batched video generation
 
+## Code-Grounded Runtime Surface
+
+- `mineworld.py` is the interactive demo shell that maps button selections and camera deltas into model action indices.
+- The demo path explicitly manages context exhaustion by trimming old frames and actions, refreshing KV cache, and re-prefilling the transformer.
+- `diagonal_decoding.py` contains the real decoding substrate for top-k, top-p, multi-token decoding, and the image-diagonal schedule that reinserts action tokens at image-token boundaries.
+- `inference.py` is the evaluation runtime that switches between `naive` and `image_diagd`, measures token throughput, and converts generated pixel tokens back into MP4 video.
+- `lvm.py` is the integration layer that imports diagonal decoding helpers into the Llama-based transformer runtime.
+
+## Operational Notes
+
+- MineWorld is not only a README-described benchmark; it is a repo with explicit cache-management and decoding-control techniques worth reusing.
+- The strongest reusable code insight is that interactivity, decoding strategy, and cache refresh are all surfaced as normal runtime controls rather than buried in model internals.
+
 ## README Preview
 
 <div align="center">

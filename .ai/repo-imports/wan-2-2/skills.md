@@ -1,9 +1,9 @@
-# Bundle: mineworld
+# Bundle: wan-2-2
 
-- source_repo: https://github.com/microsoft/mineworld
+- source_repo: https://github.com/Wan-Video/Wan2.2
 - knowledge_host_repo: https://github.com/daxsieger/moltendime
 - bundle_type: inferred
-- generated_for_persona: mineworld-minecraft-world-modeler
+- generated_for_persona: wan-2-2-video-systems-architect
 - tracked_by_persona: ai-rule-learner
 
 ## Imported Repository AI Assets
@@ -18,25 +18,19 @@
 
 - The dedicated repository persona is the receptacle for imported repository skills.
 - System personas such as `ai-rule-learner` should index and track these skills, not replace the repository persona as their runtime owner.
-- The `mineworld-minecraft-world-modeler` persona owns the first-level Minecraft world-model and diagonal-decoding skills extracted from MineWorld.
+- The `wan-2-2-video-systems-architect` persona owns the first-level multimodal video-generation and deployment skills extracted from Wan2.2.
 
-- No explicit repository skill files were found, so the repository persona relies on inferred first-level skills extracted from the public README, inference surface, and metrics workflow.
+- No explicit repository skill files were found, so the repository persona relies on inferred first-level skills extracted from the public README, task matrix, and deployment guidance.
 
 ## Extracted Skill Pack
 
-- `skills-index.md`: top-level index for the extracted MineWorld skill set
-- `01-mineworld-core-skills.md`: autoregressive Minecraft world modeling, diagonal decoding, and evaluation workflow
-- `02-mineworld-runtime-and-decoding-skills.md`: code-grounded action encoding, KV-cache refresh, decoding modes, and transformer integration
+- `skills-index.md`: top-level index for the extracted Wan2.2 skill set
+- `01-wan-2-2-core-skills.md`: MoE video generation, multimodal task coverage, and deployment posture
 
 ## Family Placement
 
-- `mineworld` belongs to the interactive-world-models family tracked in `../interactive-world-models-family.md`.
-- Within that family, it is the Minecraft-centric autoregressive benchmark peer to Matrix-Game.
-
-## Code-Grounded Extraction Surface
-
-- Primary code anchors: `mineworld.py`, `diagonal_decoding.py`, `inference.py`, and `lvm.py`
-- These files control the interactive demo loop, the diagonal decoding implementation, the evaluation-generation path, and the transformer integration points.
+- `wan-2-2` belongs to the interactive-world-models family tracked in `../interactive-world-models-family.md`.
+- Within that family, it is an upstream generative backbone peer rather than a direct gameplay-world-model benchmark.
 
 ## Inferred Reusable Skills
 

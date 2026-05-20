@@ -11,6 +11,19 @@ Open Oasis is a narrow public inference repository for Oasis 500M. It is not the
 - Prompt-frame bootstrapping from video or image
 - Minimal runtime surface built around one generation script and two checkpoints
 
+## Code-Grounded Runtime Surface
+
+- `generate.py` is the real controlling path for public inference.
+- The runtime loads a DiT and a VAE separately, allowing `.pt` and `.safetensors` checkpoints.
+- Prompt inputs are normalized through `utils.py` into a fixed `1 x t x c x h x w` tensor contract at `360x640` resolution.
+- Action inputs are normalized through `utils.py` into a one-hot stream with an added initial no-op frame.
+- The rollout uses a diffusion-forcing style loop that appends one latent frame at a time, stabilizes prior context frames, and crops the active context to the transformer's maximum frame window.
+
+## Architectural Notes
+
+- `dit.py` exposes the timestep-conditioning and patch-embedding surface rather than a large application shell.
+- This is why the repository stays operationally narrow even though the internal generation logic is nontrivial.
+
 ## README Preview
 
 # Oasis 500M

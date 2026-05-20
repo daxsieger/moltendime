@@ -73,7 +73,7 @@ This note separates what the Matrix-Game repository states explicitly about its 
 
 1. `Matrix-3D`
 2. `GameFactory`
-3. `Wan2.2`
+3. `Wan-Video/Wan2.2`
 4. `HunyuanVideo`
 5. `SkyReels-V2`
 6. `Open-Sora-Plan`

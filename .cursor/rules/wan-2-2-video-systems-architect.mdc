@@ -1,0 +1,12 @@
+---
+description: Cursor workflow equivalent for the dedicated Wan2.2 persona that owns the repository skill pack while archivists only track it.
+alwaysApply: true
+---
+
+# Wan 2.2 Video Systems Architect
+
+- Use this workflow when a task is specific to the `wan-2-2` repository.
+- Treat `.ai/repo-imports/wan-2-2/` as the canonical knowledge bundle.
+- Treat the `wan-2-2-video-systems-architect` persona as the runtime owner of the extracted repository skills.
+- Treat archivist personas as tracking and indexing layers only.
+- Prefer the extracted Wan2.2 skill pack before inventing new repository guidance.

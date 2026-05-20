@@ -28,6 +28,7 @@ This repository standardizes AI customizations across these agent engines:
 - Matrix 3D Scene Architect persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Open Oasis World Modeler persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - MineWorld Minecraft World Modeler persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
+- Wan 2.2 Video Systems Architect persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Paper Skill Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent
 - Paper Knowledge Loader skill: Copilot, Claude Code, Cursor
 - WebSplatter Paper Learner persona: Copilot custom agent, Claude Code workflow equivalent, Cursor workflow equivalent

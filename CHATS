@@ -684,3 +684,17 @@ fai pure 1,2,3
 ```text
 fai 1,2,3
 ```
+
+### 2026-05-20T07:15:40.0847020+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+fai portare open-oasis da persona leggera a bundle più profondo con skill estratte dal codice, non solo dal README
+fare lo stesso per mineworld, includendo file chiave come diagonal_decoding.py e mineworld.py
+aggiungere il prossimo peer della family interactive world models, partendo da GameFactory o Wan2.2
+```

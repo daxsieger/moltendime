@@ -1,0 +1,23 @@
+# wan-2-2 Memory Notes
+
+- Repository URL: https://github.com/Wan-Video/Wan2.2
+- Knowledge host repository: https://github.com/daxsieger/moltendime
+- Project type: Python project
+- Package name: not detected
+- Development command: not detected
+- Build command: not detected
+- Stack tags: python
+- Monorepo/workspace: false
+- Repository AI asset count: 0
+- Workflow automation asset count: 0
+- First-level persona skill count: 5
+- Dedicated owner persona: wan-2-2-video-systems-architect
+- Wan2.2 is a Wan-based multimodal video backbone rather than a direct gameplay-world-model benchmark
+- Repo covers T2V, I2V, TI2V, S2V, and animate variants in one lineage
+- README documents both single-GPU and distributed FSDP plus Ulysses inference paths
+- Prompt extension is a first-class optional stage via Dashscope or local Qwen models
+- TI2V-5B is the clearest consumer-grade entry point with 24GB-class hardware guidance
+- Imported repository skills belong operationally to the dedicated repository persona.
+- System archivists track imported skills and workflows for reuse and audit.
+- Bundle quality: inferred
+- Family placement: interactive-world-models
