@@ -4,7 +4,9 @@ param(
     [string]$HandlingAgent = $(if ($env:CHAT_COMMIT_DEFAULT_AGENT) { $env:CHAT_COMMIT_DEFAULT_AGENT } else { "Unknown Agent" }),
     [string]$SourceClient = $(if ($env:CHAT_COMMIT_CLIENT) { $env:CHAT_COMMIT_CLIENT } else { "unknown-client" }),
     [string]$Timestamp = "",
-    [string]$EventName = "user_prompt"
+    [string]$EventName = "user_prompt",
+    [string]$Remote = "origin",
+    [switch]$AllowUnpublishedPersonalityBranch
 )
 
 function Get-CommitPromptExcerpt {
@@ -34,6 +36,24 @@ function Ensure-GitIdentity {
     }
 }
 
+function Assert-PublishedPersonalityBranch {
+    param([string]$RemoteName)
+
+    if ($AllowUnpublishedPersonalityBranch) {
+        return
+    }
+
+    $scriptPath = Join-Path $PSScriptRoot "assert-personality-branch-published.ps1"
+    if (-not (Test-Path -LiteralPath $scriptPath)) {
+        return
+    }
+
+    & $scriptPath -Remote $RemoteName | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        throw "Current personality branch must be published before committing."
+    }
+}
+
 $resolvedRepoPath = Resolve-Path -LiteralPath $RepoPath -ErrorAction SilentlyContinue
 if ($null -eq $resolvedRepoPath) {
     $resolvedRepoPath = Get-Location
@@ -52,6 +72,8 @@ try {
     }
 
     Ensure-GitIdentity
+
+    Assert-PublishedPersonalityBranch -RemoteName $Remote
 
     git add -A
     git diff --cached --quiet

@@ -775,3 +775,17 @@ ok rimettiamoci in sesto allora: crea le personas come branch separati allora e 
 ```text
 ok ora crea uno script/skill per pushare/pullare tutti  branch da github
 ```
+
+### 2026-05-20T08:13:13.7455860+02:00
+- event: user_prompt
+- source_client: unknown-client
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+posso fare il passo successivo e aggiungere un piccolo wrapper push-all-personas e pull-all-personas per evitare di ricordare i parametri
+
+posso anche aggiungere un controllo che fallisca se provi a lavorare su una personality branch non ancora pushata su origin, e una modalità che preveda una conferma
+```

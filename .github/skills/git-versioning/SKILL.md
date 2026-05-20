@@ -29,15 +29,17 @@ Use this skill to manage repository lifecycle and the prompt-based commit policy
 - Use `./scripts/create-personality-branch.ps1` to bootstrap personality branches.
 - Use `./scripts/record-personality-learning.ps1` to append new learnings.
 - Use `./scripts/sync-personality-branches.ps1` when `main` and `persona/*` branches need one batch push/pull against GitHub.
+- Use `./scripts/assert-personality-branch-published.ps1` to fail fast if the active `persona/*` branch is not yet published on `origin`.
 
 ## Workflow
 
 1. Ensure the workspace is a git repository.
 2. Ensure the active personality has a dedicated `persona/<slug>` branch.
-3. Keep `.ai/SHARED_LEARNINGS.md` updated with cross-personality knowledge.
-4. Make the requested changes.
-5. Run the shared commit script.
-6. Confirm whether a commit was created or skipped because there were no changes.
+3. Publish a newly created `persona/<slug>` branch to `origin` before doing normal personality-owned work.
+4. Keep `.ai/SHARED_LEARNINGS.md` updated with cross-personality knowledge.
+5. Make the requested changes.
+6. Run the shared commit script.
+7. Confirm whether a commit was created or skipped because there were no changes.
 
 ## Personality Branching
 
@@ -67,4 +69,17 @@ Use this skill to manage repository lifecycle and the prompt-based commit policy
 
 ```powershell
 ./scripts/sync-personality-branches.ps1 -Mode both -Remote origin -Prune -DryRun
+```
+
+### Use short wrappers for full branch sync
+
+```powershell
+./scripts/push-all-personas.ps1 -Remote origin
+./scripts/pull-all-personas.ps1 -Remote origin -Prune
+```
+
+### Enforce published personality branches
+
+```powershell
+./scripts/assert-personality-branch-published.ps1 -Remote origin
 ```

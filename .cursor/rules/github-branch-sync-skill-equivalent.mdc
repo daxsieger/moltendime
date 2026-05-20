@@ -6,7 +6,10 @@ alwaysApply: true
 # GitHub Branch Sync Skill Equivalent
 
 - Use `./scripts/sync-personality-branches.ps1` when `main` and `persona/*` branches need one batch push or pull against GitHub.
+- Use `./scripts/push-all-personas.ps1` and `./scripts/pull-all-personas.ps1` when a shorter wrapper is enough.
 - Start with `-DryRun` when you want to inspect the sync plan first.
+- Use `-RequireConfirmation` when you want one explicit confirmation before sync starts.
 - Use `-Mode push` to publish local personality branches.
 - Use `-Mode pull` to fetch and fast-forward local branches from GitHub.
 - Treat pull failures as branch-state problems to resolve explicitly; do not replace `ff-only` sync with implicit merges.
+- Use `./scripts/assert-personality-branch-published.ps1` to fail fast on unpublished `persona/*` branches.

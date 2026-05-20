@@ -7,3 +7,5 @@
 - Use one branch per agent personality, named `persona/<slug>`.
 - Keep `.ai/SHARED_LEARNINGS.md` synchronized across personality branches.
 - Use `./scripts/sync-personality-branches.ps1` for batch push/pull of `main` and `persona/*` against GitHub when branch hygiene work is needed.
+- Publish new `persona/<slug>` branches before normal personality-owned work begins.
+- Use `./scripts/assert-personality-branch-published.ps1` to fail fast when the active personality branch is not yet on `origin`.

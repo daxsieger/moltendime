@@ -6,7 +6,8 @@ param(
     [string]$PersonalityPattern = "persona/*",
     [switch]$IncludeBaseBranch,
     [switch]$Prune,
-    [switch]$DryRun
+    [switch]$DryRun,
+    [switch]$RequireConfirmation
 )
 
 function Invoke-Git {
@@ -63,6 +64,29 @@ function New-BranchResult {
     }
 }
 
+function Confirm-SyncOperation {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$ModeName,
+        [Parameter(Mandatory = $true)]
+        [string]$RemoteName,
+        [Parameter(Mandatory = $true)]
+        [string[]]$TargetBranches
+    )
+
+    if (-not $RequireConfirmation -or $DryRun) {
+        return $true
+    }
+
+    $preview = ($TargetBranches | Select-Object -First 5) -join ', '
+    if ($TargetBranches.Count -gt 5) {
+        $preview += ", ..."
+    }
+
+    $answer = Read-Host "Confirm $ModeName on remote '$RemoteName' for $($TargetBranches.Count) branches ($preview). Type 'yes' to continue"
+    return $answer -eq 'yes'
+}
+
 $insideRepo = (Invoke-Git -Arguments @("rev-parse", "--is-inside-work-tree") -IgnoreErrors)
 if ($insideRepo.ExitCode -ne 0 -or (($insideRepo.Output | Out-String).Trim() -ne "true")) {
     throw "The workspace is not a git repository."
@@ -88,6 +112,10 @@ $branches = @($branches | Sort-Object -Unique)
 $results = New-Object System.Collections.Generic.List[object]
 
 if ($Mode -in @("pull", "both")) {
+    if (-not (Confirm-SyncOperation -ModeName "pull" -RemoteName $Remote -TargetBranches $branches)) {
+        $results.Add((New-BranchResult -Branch "*" -Action "pull" -Status "cancelled" -Message "User declined confirmation."))
+    }
+    else {
     $fetchArgs = @("fetch", $Remote)
     if ($Prune) {
         $fetchArgs += "--prune"
@@ -140,9 +168,14 @@ if ($Mode -in @("pull", "both")) {
             }
         }
     }
+    }
 }
 
 if ($Mode -in @("push", "both")) {
+    if (-not (Confirm-SyncOperation -ModeName "push" -RemoteName $Remote -TargetBranches $branches)) {
+        $results.Add((New-BranchResult -Branch "*" -Action "push" -Status "cancelled" -Message "User declined confirmation."))
+    }
+    else {
     foreach ($branch in $branches) {
         $pushArgs = @("push", $Remote, "$branch`:$branch")
         if ($DryRun) {
@@ -161,6 +194,7 @@ if ($Mode -in @("push", "both")) {
         else {
             $results.Add((New-BranchResult -Branch $branch -Action "push" -Status "failed" -Message (($pushResult.Output | Out-String).Trim())))
         }
+    }
     }
 }
 

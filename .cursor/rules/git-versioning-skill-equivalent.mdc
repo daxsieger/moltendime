@@ -11,4 +11,6 @@ alwaysApply: true
 - Give each personality its own `persona/<slug>` branch.
 - Keep `.ai/SHARED_LEARNINGS.md` updated and present across personality branches.
 - Use `./scripts/sync-personality-branches.ps1` when `main` and `persona/*` branches need one batch GitHub sync.
+- Publish new personality branches before ordinary personality-owned work starts.
+- Use `./scripts/assert-personality-branch-published.ps1` to catch unpublished `persona/*` branches early.
 - Keep Copilot, Claude Code, and Cursor customizations aligned and listed in `SUPPORTED.md`.
