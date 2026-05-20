@@ -789,3 +789,15 @@ posso fare il passo successivo e aggiungere un piccolo wrapper push-all-personas
 
 posso anche aggiungere un controllo che fallisca se provi a lavorare su una personality branch non ancora pushata su origin, e una modalità che preveda una conferma
 ```
+
+### 2026-05-20T08:24:22.0285020+02:00
+- event: user_prompt
+- source_client: unknown-client
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+ok sicnronizzza tutte le personas e crea i branch mancanti su github usando la skill
+```

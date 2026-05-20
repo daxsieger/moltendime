@@ -87,6 +87,23 @@ function Confirm-SyncOperation {
     return $answer -eq 'yes'
 }
 
+function Get-TemporaryDirectoryRoot {
+    $candidates = @(
+        $env:TEMP,
+        $env:TMPDIR,
+        $env:TMP,
+        [System.IO.Path]::GetTempPath()
+    )
+
+    foreach ($candidate in $candidates) {
+        if (-not [string]::IsNullOrWhiteSpace($candidate)) {
+            return $candidate
+        }
+    }
+
+    throw "Unable to determine a temporary directory for git worktrees."
+}
+
 $insideRepo = (Invoke-Git -Arguments @("rev-parse", "--is-inside-work-tree") -IgnoreErrors)
 if ($insideRepo.ExitCode -ne 0 -or (($insideRepo.Output | Out-String).Trim() -ne "true")) {
     throw "The workspace is not a git repository."
@@ -98,6 +115,7 @@ if ($remoteCheck.ExitCode -ne 0) {
 }
 
 $currentBranch = ((Invoke-Git -Arguments @("branch", "--show-current")).Output | Out-String).Trim()
+$tempRoot = Get-TemporaryDirectoryRoot
 $branches = @()
 if ($IncludeBaseBranch -or $BaseBranch -eq $currentBranch -or $BaseBranch -eq "main") {
     $branches += $BaseBranch
@@ -140,7 +158,7 @@ if ($Mode -in @("pull", "both")) {
         }
 
         $safeBranchName = $branch -replace '[^a-zA-Z0-9_-]', '-'
-        $tempWorktree = Join-Path $env:TEMP ("ai-agent-branch-sync-" + $safeBranchName + "-" + [guid]::NewGuid().ToString('N'))
+        $tempWorktree = Join-Path $tempRoot ("ai-agent-branch-sync-" + $safeBranchName + "-" + [guid]::NewGuid().ToString('N'))
 
         try {
             Invoke-Git -Arguments @("worktree", "add", "--force", $tempWorktree, $branch) | Out-Null
