@@ -751,3 +751,15 @@ scavare altri moduli wan/modules come t5.py o i rami animate e s2v se vuoi separ
 ```text
 stai rispettando la divisione delle personas fra branch diversi?
 ```
+
+### 2026-05-20T07:54:18.6384860+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+ok rimettiamoci in sesto allora: crea le personas come branch separati allora e suddividi secondo le regole note in bransh distinti la tua conoscenza
+```
