@@ -20,12 +20,13 @@
 - System personas such as `ai-rule-learner` should index and track these skills, not replace the repository persona as their runtime owner.
 - The `gamefactory-interactive-video-architect` persona owns the first-level interactive-video and game-creation skills extracted from GameFactory.
 
-- No explicit repository skill files were found, so the repository persona relies on inferred first-level skills extracted from the public README and dataset framing.
+- No explicit repository skill files were found, so the repository persona relies on inferred first-level skills extracted from the public README, dataset framing, and the operational scripts `detection.py` and `visualize.py`.
 
 ## Extracted Skill Pack
 
 - `skills-index.md`: top-level index for the extracted GameFactory skill set
 - `01-gamefactory-core-skills.md`: generative interactive videos, decoupled action control, and GF-Minecraft dataset design
+- `02-gamefactory-dataset-and-visualization-skills.md`: metadata detection, action heuristics, and debug-overlay rendering extracted from code
 
 ## Family Placement
 

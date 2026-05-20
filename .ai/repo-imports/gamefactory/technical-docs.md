@@ -11,14 +11,27 @@ GameFactory is an interactive-video framework for creating new games with genera
 - Multi-phase training for preserving open-domain generalization
 - GF-Minecraft dataset as the control-learning substrate
 
+## Code-Grounded Operational Surface
+
+- `detection.py` is the dataset-cleaning and metadata-enrichment path, not just a helper script.
+- The script rewrites action JSON into a derived `metadata-detection` directory with extra motion-derived flags such as `collision`, `jump_invalid`, and `delta_pos`.
+- Its event logic is intentionally two-pass: threshold-based detection first, sequence cleanup second.
+- `visualize.py` is the control-debug surface for turning compact action schedules into per-frame keyboard and mouse overlays on rendered video.
+
+## Practical Reuse
+
+- GameFactory currently exposes more operational value in dataset/action-processing and audit tooling than in public model-training code.
+- The reusable insight is not only conceptual decoupling; it is also that action quality can be improved with deterministic metadata post-processing and direct visual playback of controls.
+
 ## Family Relevance
 
 - GameFactory is closer to `matrix-game` and `open-oasis` than to `wan-2-2` because it treats action-controllable video as a world-model-like interaction problem.
-- It is complementary rather than redundant: its strongest distinct signal is scene generalization and game creation beyond one fixed environment style.# gamefactory Technical Notes
+- It is complementary rather than redundant: its strongest distinct signal is scene generalization and game creation beyond one fixed environment style.
 
-## Summary
+## Comparison Posture
 
-This file is a generated technical note scaffold. It should be refined after reviewing the repository source and key documentation.
+- Relative to `matrix-game`, GameFactory is a creation peer rather than a continuation peer.
+- Relative to `mineworld` and `open-oasis`, it contributes dataset curation and action-auditing patterns more than public rollout/runtime patterns.
 
 ## README Preview
 

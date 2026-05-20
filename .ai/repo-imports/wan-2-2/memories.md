@@ -10,7 +10,7 @@
 - Monorepo/workspace: false
 - Repository AI asset count: 0
 - Workflow automation asset count: 0
-- First-level persona skill count: 10
+- First-level persona skill count: 15
 - Dedicated owner persona: wan-2-2-video-systems-architect
 - Wan2.2 is a Wan-based multimodal video backbone rather than a direct gameplay-world-model benchmark
 - Repo covers T2V, I2V, TI2V, S2V, and animate variants in one lineage
@@ -20,6 +20,10 @@
 - Code-grounded anchors: generate.py and wan/textimage2video.py
 - Runtime centralizes task validation and default parameter assignment before model initialization
 - TI2V runtime composes T5, Wan2.2-VAE, and WanModel and can patch attention/model forward paths for sequence parallelism
+- Backbone anchors: wan/modules/attention.py, wan/modules/model.py, and wan/modules/vae2_2.py
+- Backbone uses flash-attention when available but preserves a scaled-dot-product fallback path
+- WanModel applies factorized 3-axis RoPE and six-way timestep modulation across transformer residual subpaths
+- Wan2.2-VAE is a causal 3D design with temporal cache reuse for chunked processing
 - Imported repository skills belong operationally to the dedicated repository persona.
 - System archivists track imported skills and workflows for reuse and audit.
 - Bundle quality: inferred

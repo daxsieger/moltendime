@@ -45,6 +45,7 @@ Members may differ in environment, representation, and decoding strategy, but th
 - Reuse decoupled action-control and scene-generalization techniques from `gamefactory` when the destination repository aims to create or generalize new game worlds rather than only continue one established environment.
 - Reuse explorable-scene and scene-reconstruction techniques from `matrix-3d` when the destination repository targets free-view exploration or scene materialization.
 - Reuse prompt extension, multimodal task packaging, and distributed inference patterns from `wan-2-2` when the destination repository needs a stronger Wan-based generation substrate.
+- Use `interactive-world-models-comparison.md` when you need a sharper distinction between continuation peers, benchmark peers, and creation peers around `matrix-game`.
 - Keep first-level skills with their dedicated personas; this family note is only an archivist index and routing aid.
 
 ## Recommended Import Sequence

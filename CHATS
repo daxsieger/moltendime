@@ -712,3 +712,17 @@ approfondire wan-2-2 dal codice reale, non solo dal README, come hai appena fatt
 cercare in modo mirato il repo pubblico esatto di GameFactory e aggiungerlo come peer alternativo o complementare
 rifinire open-oasis ancora di più leggendo anche attention.py e vae.py per estrarre skill sul backbone, non solo sul runtime
 ```
+
+### 2026-05-20T07:46:26.7777750+02:00
+- event: user_prompt
+- source_client: copilot
+- handling_agent: GitHub Copilot
+- delegated_to: none
+- recorded_by: hook
+- backfilled: false
+
+```text
+approfondire gamefactory leggendo detection.py e visualize.py per estrarre skill operative sul dataset/action-processing, non solo concettuali
+leggere moduli più profondi di wan-2-2 sotto wan/modules per passare da skill code-grounded di orchestration a skill sul backbone vero e proprio
+costruire una nota comparativa interna tra matrix-game, mineworld, open-oasis e gamefactory che distingua chiaramente continuation, benchmark e creation peers
+```

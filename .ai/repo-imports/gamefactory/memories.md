@@ -10,12 +10,16 @@
 - Monorepo/workspace: false
 - Repository AI asset count: 0
 - Workflow automation asset count: 0
-- First-level persona skill count: 5
+- First-level persona skill count: 10
 - Dedicated owner persona: gamefactory-interactive-video-architect
 - GameFactory is a public repo at KlingAIResearch/GameFactory
 - Core framing is generative interactive video for creating new games with scene generalization
 - Action control is explicitly decoupled from open-domain video priors through a multi-phase strategy
 - GF-Minecraft dataset is the main control-learning substrate with biome, weather, time-of-day, metadata, and action annotations
+- Code-grounded anchors: detection.py and visualize.py
+- Detection script rewrites metadata with delta_pos, collision, and jump-invalid flags in a dedicated derived metadata directory
+- Visualization script expands segment configs into per-frame key and mouse traces and overlays them directly on gameplay video
+- GameFactory is best treated as a creation peer with operational dataset/action-auditing techniques, not only a conceptual framework
 - Imported repository skills belong operationally to the dedicated repository persona.
 - System archivists track imported skills and workflows for reuse and audit.
 - Bundle quality: inferred

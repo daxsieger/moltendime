@@ -19,11 +19,18 @@ Wan2.2 is a large-scale multimodal video-generation repository that sits upstrea
 - `wan/textimage2video.py` shows how Wan2.2 actually composes TI2V from T5, Wan2.2-VAE, and WanModel, then applies FSDP or sequence-parallel adaptations.
 - The code also makes device placement and dtype conversion explicit policy choices rather than incidental details.
 
+## Backbone Surface
+
+- `wan/modules/attention.py` keeps the backbone portable by preferring varlen flash-attention kernels but retaining a native scaled-dot-product fallback.
+- `wan/modules/model.py` shows that WanModel is not a generic transformer wrapper: it patchifies video with Conv3d, tracks `grid_sizes` and `seq_lens`, and applies axis-factorized RoPE over time, height, and width.
+- The same module uses six-way timestep modulation inside each attention block, so conditioning reaches self-attention, cross-attention, and FFN residual paths directly.
+- `wan/modules/vae2_2.py` reveals a causal 3D VAE with temporal cache reuse during upsampling, downsampling, and residual processing, which matters for chunked video serving.
+
 ## Family Relevance
 
 - Wan2.2 is not a gameplay-world-model repo in the way MineWorld or Open Oasis are.
 - It still belongs in the family because it is a likely upstream substrate for controllable world-generation systems that need stronger video priors, prompt extension, or distributed inference patterns.
-- The code confirms that this relevance is operational, not only conceptual: the repo exposes reusable strategies for task multiplexing, prompt expansion, and distributed model execution.
+- The code confirms that this relevance is operational, not only conceptual: the repo exposes reusable strategies for task multiplexing, prompt expansion, distributed model execution, and the internal design of a deployable video backbone.
 
 ## README Preview
 

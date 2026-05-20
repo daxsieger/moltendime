@@ -24,3 +24,11 @@
 - requirements.txt
 - tests/README.md
 - wan/modules/animate/preprocess/UserGuider.md
+
+## Code Anchors
+
+- generate.py
+- wan/textimage2video.py
+- wan/modules/attention.py
+- wan/modules/model.py
+- wan/modules/vae2_2.py
